@@ -1,0 +1,26 @@
+---
+import Default from '../../layouts/DefaultLayout.astro';
+const notas = [
+  { title: 'Operación Topógrafo — Espionaje del Ejército a denunciantes', img: '/images/topografo.jpg', url: 'https://www.latercera.com/reportajes/noticia/operacion-topografo-espionaje-del-ejercito-cuatro-denunciantes-irregularidades/777342/'},
+  { title: 'Ricardo Lagos: “Durante mi gobierno no privaticé nada, al contrario”', img: '/images/lagos.jpg', url: 'https://www.publimetro.cl/cl/noticias/2016/11/18/ex-presidente-lagos-durante-mi-gobierno-no-privatice-nada-contrario.html'},
+  { title: 'Sebastián Piñera: “Me siento orgulloso de lo que he logrado en la vida”', img: '/images/pinera.jpg', url: 'https://www.publimetro.cl/cl/noticias/2017/06/19/sebastian-pinera-me-siento-orgulloso-lo-he-logrado-vida.html'},
+  { title: 'Hernán Larraín: “No somos partidarios de indultar a violadores de DD.HH. ni asesinos en serie”', img: '/images/larrain.jpg', url: 'https://www.latercera.com/nacional/noticia/hernan-larrain-ministro-justicia-derechos-humanos-no-somos-partidarios-indultar-violadores-dd-hh-asesinos-serie/111533/'},
+  { title: 'La declaración de ‘Ramiro’ ante Carroza', img: '/images/ramiro.jpg', url: 'https://www.latercera.com/la-tercera-pm/noticia/la-declaracion-ramiro-carroza-estoy-seguro-estaba-privado-libertad-detencion-preventiva/792779/'},
+  { title: "El Papa en La Araucanía: 'Mari Mari, peñi, lamngen'", img: '/images/papa.jpg', url: 'https://www.latercera.com/noticia/papa-la-araucania-mari-mari/'},
+];
+---
+<Default title="Prensa">
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h1 class="text-3xl font-heading mb-10">Prensa</h1>
+    <div class="grid md:grid-cols-3 gap-8">
+      {notas.map(n => (
+        <a href={n.url} target="_blank" rel="noopener" class="bg-bg-card rounded-2xl overflow-hidden hover:scale-[1.02] transition block">
+          <img src={n.img} alt={n.title} class="w-full h-44 object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold">{n.title}</h3>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Default>

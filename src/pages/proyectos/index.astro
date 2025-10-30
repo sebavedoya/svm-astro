@@ -1,0 +1,24 @@
+---
+import Default from '../../layouts/DefaultLayout.astro';
+const items = [
+  { slug: 'operacion-topografo', title: 'Operación Topógrafo', img: '/images/topografo.jpg', desc: 'Investigación que reveló el espionaje de la Dirección de Inteligencia del Ejército a periodistas y denunciantes.'},
+  { slug: 'vocerias-y-despliegue', title: 'Vocerías y despliegue', img: '/images/vocerias.jpg', desc: 'Diseño de lineamientos, preparación de portavoces y estandarización de mensajes clave para despliegue coherente.'},
+  { slug: 'comunicacion-digital', title: 'Comunicación digital', img: '/images/digital.jpg', desc: 'Reorientación a formatos nativos, workflows editoriales y medición de impacto.'},
+];
+---
+<Default title="Proyectos">
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h1 class="text-3xl font-heading mb-10">Proyectos</h1>
+    <div class="grid md:grid-cols-3 gap-8">
+      {items.map(p => (
+        <a href={`/proyectos/${p.slug}/`} class="bg-bg-card rounded-2xl overflow-hidden hover:scale-[1.02] transition block">
+          <img src={p.img} alt={p.title} class="w-full h-44 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold">{p.title}</h3>
+            <p class="text-text-dim text-sm mt-2">{p.desc}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Default>

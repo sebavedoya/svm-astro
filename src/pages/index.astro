@@ -1,0 +1,42 @@
+---
+import Default from '../layouts/DefaultLayout.astro';
+import Hero from '../components/Hero.tsx';
+
+const experiencia = [
+  { name: 'La Tercera', url: 'https://www.latercera.com/' },
+  { name: 'Ministerio de Educación', url: 'https://www.mineduc.cl/' },
+  { name: 'INDAP', url: 'https://www.indap.gob.cl/' },
+  { name: 'Municipalidad de Cerro Navia', url: 'https://www.cerronavia.cl/' },
+  { name: 'Publimetro', url: 'https://www.publimetro.cl/' },
+  { name: 'Subsecretaría de Telecomunicaciones', url: 'https://www.subtel.gob.cl/' },
+  { name: 'TVN', url: 'https://www.tvn.cl/' },
+];
+---
+<Default title="Inicio">
+  <Hero client:load />
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h3 class="text-2xl font-heading border-b-2 border-accent inline-block mb-10">Experiencia</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-text-dim">
+      {experiencia.map((e) => (
+        <a class="hover:text-accent transition-colors" href={e.url} rel="noopener" target="_blank">{e.name}</a>
+      ))}
+    </div>
+  </section>
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h3 class="text-2xl font-heading border-b-2 border-accent inline-block mb-10">Sistema</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-bg-card rounded-2xl p-8">
+        <h4 class="text-xl font-semibold mb-2">Análisis</h4>
+        <p class="text-text-dim text-sm">Comprensión estructural de entornos comunicacionales complejos.</p>
+      </div>
+      <div class="bg-bg-card rounded-2xl p-8">
+        <h4 class="text-xl font-semibold mb-2">Diseño narrativo</h4>
+        <p class="text-text-dim text-sm">Construcción de relatos institucionales coherentes y medibles.</p>
+      </div>
+      <div class="bg-bg-card rounded-2xl p-8">
+        <h4 class="text-xl font-semibold mb-2">Conducción</h4>
+        <p class="text-text-dim text-sm">Gestión y dirección estratégica de equipos y crisis comunicacionales.</p>
+      </div>
+    </div>
+  </section>
+</Default>
