@@ -1,9 +1,22 @@
 ---
-const { title, description = 'Consultor en comunicación estratégica. Entornos complejos, diseño narrativo, conducción y medición.' } = Astro.props;
+import Footer from '../components/Footer.astro';
+import '../styles/globals.css';
+
+const {
+  title,
+  description = 'Consultor en comunicación estratégica. Entornos complejos, diseño narrativo, conducción y medición.',
+} = Astro.props;
+
 const pageTitle = title ? `${title} · Sebastián Vedoya M.` : 'Sebastián Vedoya M. — Comunicación Estratégica';
 const pageUrl = new URL(Astro.url.pathname, 'https://svm-astro.vercel.app').toString();
 const ogImage = '/og.svg';
-const GA_ID = 'G-03ZMGB2V69';
+const navLinks = [
+  { href: '/sistema', label: 'Sistema' },
+  { href: '/proyectos', label: 'Proyectos' },
+  { href: '/reflexiones', label: 'Reflexiones' },
+  { href: '/prensa', label: 'Prensa' },
+  { href: '/contacto', label: 'Contacto' },
+];
 ---
 <!doctype html>
 <html lang="es">
@@ -12,12 +25,14 @@ const GA_ID = 'G-03ZMGB2V69';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Inter+Tight:wght@600;700&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/globals.css">
+
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0D0D0D" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Sebastián Vedoya M." />
@@ -25,13 +40,15 @@ const GA_ID = 'G-03ZMGB2V69';
     <meta property="og:description" content={description} />
     <meta property="og:url" content={pageUrl} />
     <meta property="og:image" content={ogImage} />
+
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
     <!-- JSON-LD Person -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
       {JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
@@ -39,25 +56,33 @@ const GA_ID = 'G-03ZMGB2V69';
         jobTitle: 'Estratega en Comunicación',
         url: 'https://svm-astro.vercel.app',
         email: 'mailto:seba.vedoya@gmail.com',
-        sameAs: [
-          'https://www.linkedin.com/in/sebastianvedoyam/'
-        ]
+        sameAs: ['https://www.linkedin.com/in/sebastianvedoyam/']
       })}
     </script>
-    <!-- GA4 -->
-    <script async src={"https://www.googletagmanager.com/gtag/js?id=" + GA_ID}></script>
-    <script>
+
+    <!-- GA4: ID fijo en el script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-03ZMGB2V69"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '{GA_ID}');
+      gtag('config', 'G-03ZMGB2V69');
     </script>
   </head>
   <body class="font-body">
-    {await import('../components/Header.astro').then(m => m.default())}
+    <header class="fixed top-0 left-0 z-50 w-full bg-black/40 px-6 py-4 backdrop-blur-md md:px-10">
+      <div class="mx-auto flex max-w-6xl items-center justify-between">
+        <a href="/" class="font-heading tracking-wide">Sebastián Vedoya M.</a>
+        <nav class="hidden gap-6 text-sm text-text-dim md:flex">
+          {navLinks.map(({ href, label }) => (
+            <a href={href} class="transition-colors hover:text-accent">{label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
     <main class="pt-24 min-h-screen">
       <slot />
     </main>
-    {await import('../components/Footer.astro').then(m => m.default())}
+    <Footer />
   </body>
 </html>
