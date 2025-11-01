@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/DefaultLayout.astro
-title: Autoridades y redes sociales: una confusión frecuente
+title: "Autoridades y redes sociales: una confusión frecuente"
 ---
 
-Pese a lo que muchas autoridades creen, las redes sociales institucional no son su canal de noticias 24/7 a su disposición. Registrar y publicar cada una de sus actividades públicas no solo distrae a los equipos de comunicaciones de lo realmente importante —gestión de prensa, comunicación interna o creación de contenido de valor—, sino que termina generando más bloqueos que los soñados “likes”.
+Pese a lo que muchas autoridades creen, las redes sociales institucionales no son su canal de noticias 24/7 a su disposición. Registrar y publicar cada una de sus actividades públicas no solo distrae a los equipos de comunicaciones de lo realmente importante —gestión de prensa, comunicación interna o creación de contenido de valor—, sino que termina generando más bloqueos que los soñados “likes”.
 
 Autoridades de distintos niveles replican este modelo: subsecretarías, seremis, delegaciones, servicios. Parecen clones de lo que no se debe hacer en redes sociales. Si ya existen fuertes resistencias hacia las instituciones estatales, malgastar la oportunidad que ofrece el entorno digital solo amplía esa distancia.
 
