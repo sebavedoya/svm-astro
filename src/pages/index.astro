@@ -11,32 +11,199 @@ const experiencia = [
   { name: 'Subsecretaría de Telecomunicaciones', url: 'https://www.subtel.gob.cl/' },
   { name: 'TVN', url: 'https://www.tvn.cl/' },
 ];
+
+const sistemaIntro =
+  'Modelo de trabajo basado en análisis, diseño narrativo y conducción. Integra datos, metodologías de crisis y workflows editoriales medibles.';
+
+const sistema = [
+  {
+    title: 'Análisis',
+    description: 'Comprensión estructural de entornos comunicacionales complejos.',
+    bullets: [
+      'Mapeo de actores y riesgos.',
+      'Arquitectura de mensajes multicanal.',
+      'Instrumentación GA4/Tag Manager.',
+    ],
+  },
+  {
+    title: 'Diseño narrativo',
+    description: 'Construcción de relatos institucionales coherentes y medibles.',
+    bullets: [
+      'Relato maestro y bancos de mensajes.',
+      'Guías de vocería y matrices Q&A.',
+      'Formatos nativos y kits visuales.',
+    ],
+  },
+  {
+    title: 'Conducción',
+    description: 'Gestión y dirección estratégica de equipos y crisis comunicacionales.',
+    bullets: [
+      'Gobernanza editorial y crisis rooms.',
+      'KPIs e iteración continua.',
+      'Entrenamiento a portavoces.',
+    ],
+  },
+];
+
+const proyectos = [
+  {
+    slug: 'operacion-topografo',
+    title: 'Operación Topógrafo',
+    img: '/images/topografo.jpg',
+    desc: 'Investigación que expuso el espionaje del Ejército a periodistas y denunciantes, con repercusiones judiciales y mediáticas.',
+  },
+  {
+    slug: 'vocerias-y-despliegue',
+    title: 'Vocerías y despliegue',
+    img: '/images/vocerias.jpg',
+    desc: 'Lineamientos, preparación de portavoces y estandarización de mensajes para un despliegue coherente en medios, regiones y redes.',
+  },
+  {
+    slug: 'comunicacion-digital',
+    title: 'Comunicación digital',
+    img: '/images/digital.jpg',
+    desc: 'Reorientación a formatos nativos, workflows editoriales y medición para mejorar alcance, retención y reputación.',
+  },
+];
+
+const reflexiones = [
+  {
+    slug: 'la-ley-de-la-variedad-requerida',
+    title: 'La ley de la variedad requerida y el desafío comunicacional contemporáneo',
+    summary:
+      'Ashby enseñó que ningún actor puede controlar su entorno sin igualarlo en complejidad. La comunicación estratégica debe domesticar la variedad con mensajes y canales sincronizados.',
+  },
+  {
+    slug: 'autoridades-y-redes-sociales',
+    title: 'Autoridades y redes sociales: una confusión frecuente',
+    summary:
+      'Las redes institucionales no son bitácoras personales de autoridades. Liberar a los equipos para crear valor y cercanía construye comunidad y visibilidad real.',
+  },
+  {
+    slug: 'comunicar-sin-miedo',
+    title: 'Comunicar sin miedo',
+    summary:
+      'El temor a exponerse inmoviliza. La preparación y la escucha activa permiten convertir cada conversación en una oportunidad, como demuestra el ejemplo de Rapa Nui.',
+  },
+];
+
+const prensa = [
+  {
+    title: 'Operación Topógrafo — Espionaje del Ejército a denunciantes',
+    img: '/images/topografo.jpg',
+    url: 'https://www.latercera.com/reportajes/noticia/operacion-topografo-espionaje-del-ejercito-cuatro-denunciantes-irregularidades/777342/',
+  },
+  {
+    title: 'Ricardo Lagos: “Durante mi gobierno no privaticé nada, al contrario”',
+    img: '/images/lagos.jpg',
+    url: 'https://www.publimetro.cl/cl/noticias/2016/11/18/ex-presidente-lagos-durante-mi-gobierno-no-privatice-nada-contrario.html',
+  },
+  {
+    title: 'Sebastián Piñera: “Me siento orgulloso de lo que he logrado en la vida”',
+    img: '/images/pinera.jpg',
+    url: 'https://www.publimetro.cl/cl/noticias/2017/06/19/sebastian-pinera-me-siento-orgulloso-lo-he-logrado-vida.html',
+  },
+  {
+    title: 'Hernán Larraín: “No somos partidarios de indultar a violadores de DD.HH. ni asesinos en serie”',
+    img: '/images/larrain.jpg',
+    url: 'https://www.latercera.com/nacional/noticia/hernan-larrain-ministro-justicia-derechos-humanos-no-somos-partidarios-indultar-violadores-dd-hh-asesinos-serie/111533/',
+  },
+  {
+    title: 'La declaración de ‘Ramiro’ ante Carroza',
+    img: '/images/ramiro.jpg',
+    url: 'https://www.latercera.com/la-tercera-pm/noticia/la-declaracion-ramiro-carroza-estoy-seguro-estaba-privado-libertad-detencion-preventiva/792779/',
+  },
+  {
+    title: "El Papa en La Araucanía: 'Mari Mari, peñi, lamngen'",
+    img: '/images/papa.jpg',
+    url: 'https://www.latercera.com/noticia/papa-la-araucania-mari-mari/',
+  },
+];
 ---
 <Default title="Inicio">
   <Hero client:load />
-  <section class="max-w-6xl mx-auto px-6 py-16">
-    <h3 class="text-2xl font-heading border-b-2 border-accent inline-block mb-10">Experiencia</h3>
+  <section id="experiencia" class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-heading border-b-2 border-accent inline-block mb-10">Experiencia</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-text-dim">
       {experiencia.map((e) => (
         <a class="hover:text-accent transition-colors" href={e.url} rel="noopener" target="_blank">{e.name}</a>
       ))}
     </div>
   </section>
-  <section class="max-w-6xl mx-auto px-6 py-16">
-    <h3 class="text-2xl font-heading border-b-2 border-accent inline-block mb-10">Sistema</h3>
+  <section id="sistema" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl font-heading mb-4">Sistema</h2>
+      <p class="text-text-dim">{sistemaIntro}</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 mt-10">
+      {sistema.map((bloque) => (
+        <div class="bg-bg-card rounded-2xl p-8">
+          <h3 class="text-xl font-semibold mb-2">{bloque.title}</h3>
+          <p class="text-text-dim text-sm mb-4">{bloque.description}</p>
+          <ul class="list-disc list-inside text-text-dim text-sm space-y-1">
+            {bloque.bullets.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section id="proyectos" class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-heading mb-6">Proyectos</h2>
+    <p class="text-text-dim max-w-3xl mb-10">
+      Casos recientes que combinan investigación, despliegue comunicacional y rediseño digital. Cada proyecto incluye metodología a medida,
+      gobernanza de mensajes y métricas para evaluar impacto.
+    </p>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-bg-card rounded-2xl p-8">
-        <h4 class="text-xl font-semibold mb-2">Análisis</h4>
-        <p class="text-text-dim text-sm">Comprensión estructural de entornos comunicacionales complejos.</p>
-      </div>
-      <div class="bg-bg-card rounded-2xl p-8">
-        <h4 class="text-xl font-semibold mb-2">Diseño narrativo</h4>
-        <p class="text-text-dim text-sm">Construcción de relatos institucionales coherentes y medibles.</p>
-      </div>
-      <div class="bg-bg-card rounded-2xl p-8">
-        <h4 class="text-xl font-semibold mb-2">Conducción</h4>
-        <p class="text-text-dim text-sm">Gestión y dirección estratégica de equipos y crisis comunicacionales.</p>
-      </div>
+      {proyectos.map((p) => (
+        <article class="bg-bg-card rounded-2xl overflow-hidden transition hover:scale-[1.02]">
+          <img src={p.img} alt={p.title} class="w-full h-44 object-cover" />
+          <div class="p-6 flex flex-col gap-4">
+            <div>
+              <h3 class="text-xl font-semibold">{p.title}</h3>
+              <p class="text-text-dim text-sm mt-2">{p.desc}</p>
+            </div>
+            <a class="text-accent text-sm font-semibold" href={`/proyectos/${p.slug}/`}>Leer caso</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section id="reflexiones" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-heading mb-6">Reflexiones</h2>
+    <p class="text-text-dim mb-8">Ideas y aprendizajes sobre comunicación estratégica, liderazgo público y construcción de confianza.</p>
+    <div class="space-y-8">
+      {reflexiones.map((nota) => (
+        <article class="bg-bg-card rounded-2xl p-8 flex flex-col gap-4">
+          <h3 class="text-2xl font-semibold">{nota.title}</h3>
+          <p class="text-text-dim">{nota.summary}</p>
+          <a class="text-accent font-semibold text-sm" href={`/reflexiones/${nota.slug}/`}>Leer reflexión</a>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section id="prensa" class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-heading mb-6">Prensa</h2>
+    <p class="text-text-dim max-w-3xl mb-10">Reportajes y entrevistas que han marcado la agenda y profundizado en desafíos de política pública.</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      {prensa.map((n) => (
+        <a href={n.url} target="_blank" rel="noopener" class="bg-bg-card rounded-2xl overflow-hidden hover:scale-[1.02] transition block">
+          <img src={n.img} alt={n.title} class="w-full h-44 object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold">{n.title}</h3>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+  <section id="contacto" class="max-w-3xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-heading mb-6">¿Conversamos?</h2>
+    <p class="text-text-dim">Escríbeme y revisa mi CV.</p>
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="mailto:seba.vedoya@gmail.com" class="bg-accent px-5 py-3 rounded-xl text-white font-semibold hover:bg-[#0099b0]">seba.vedoya@gmail.com</a>
+      <a href="/files/CV.pdf" class="px-5 py-3 rounded-xl border border-accent text-accent hover:bg-accent hover:text-white transition">Descargar CV</a>
+      <a href="https://www.linkedin.com/in/sebastianvedoyam/" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-text-dim text-text-dim hover:text-accent">LinkedIn</a>
     </div>
   </section>
 </Default>
