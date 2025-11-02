@@ -50,7 +50,7 @@ export default function Hero() {
       >
         <div className="absolute inset-0 rounded-[2.5rem] bg-accent-alt/40 blur-3xl" aria-hidden="true" />
         <img
-          src="/images/hero-illustration.svg"
+          src="/images/hero-illustration.jpg"
           alt="Ilustración de trabajo estratégico en comunicación"
           className="relative w-full rounded-[2.5rem] border border-black/10 shadow-2xl"
           loading="lazy"
