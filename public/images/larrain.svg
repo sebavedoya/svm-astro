@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad-larrain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051F20" />
+      <stop offset="100%" stop-color="#0E4749" />
+    </linearGradient>
+    <linearGradient id="scale" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8F9FA" />
+      <stop offset="100%" stop-color="#CEDFE0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad-larrain)" />
+  <g opacity="0.35" stroke="#1B6264" stroke-width="2">
+    <path d="M200 120h800M200 190h800M200 260h800M200 330h800M200 400h800M200 470h800" />
+    <path d="M320 80v470M520 80v470M720 80v470M920 80v470" />
+  </g>
+  <g transform="translate(350 130)">
+    <rect x="0" y="150" width="500" height="140" rx="70" fill="rgba(255,255,255,0.08)" />
+    <path d="M60 220h380" stroke="url(#scale)" stroke-width="70" stroke-linecap="round" />
+    <circle cx="60" cy="220" r="75" fill="#0A3335" />
+    <circle cx="440" cy="220" r="75" fill="#0A3335" />
+    <path d="M180 80l70 300M320 80l-70 300" stroke="#F4FBFC" stroke-width="28" stroke-linecap="round" />
+    <path d="M180 80l70 300M320 80l-70 300" stroke="#00B8A2" stroke-width="10" stroke-linecap="round" opacity="0.8" />
+  </g>
+  <text x="160" y="520" fill="#E8FEFC" font-size="58" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600">
+    Hernán Larraín
+  </text>
+  <text x="160" y="570" fill="#9CEBE0" font-size="28" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif">
+    Justicia y derechos humanos en debate público
+  </text>
+</svg>

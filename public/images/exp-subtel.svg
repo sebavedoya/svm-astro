@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <linearGradient id="grad-exp-subtel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071A2D" />
+      <stop offset="100%" stop-color="#103A63" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="48" fill="url(#grad-exp-subtel)" />
+  <g fill="none" stroke="#9ED9FF" stroke-width="12" stroke-linecap="round">
+    <path d="M70 80c30 0 50 20 50 50s-20 50-50 50" />
+    <path d="M100 80c30 0 50 20 50 50s-20 50-50 50" opacity="0.6" />
+    <path d="M130 80c30 0 50 20 50 50s-20 50-50 50" opacity="0.3" />
+  </g>
+  <circle cx="70" cy="130" r="20" fill="#E5F5FF" />
+  <text x="120" y="206" fill="#CDEBFF" font-size="54" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600" text-anchor="middle">
+    SUBTEL
+  </text>
+</svg>

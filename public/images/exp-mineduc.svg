@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <linearGradient id="grad-exp-mineduc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1B3A" />
+      <stop offset="100%" stop-color="#1F3F73" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="48" fill="url(#grad-exp-mineduc)" />
+  <path d="M70 170h100" stroke="#F8F9FB" stroke-width="14" stroke-linecap="round" />
+  <path d="M70 95c0-28 22-50 50-50s50 22 50 50v65H70z" fill="rgba(255,255,255,0.15)" />
+  <circle cx="120" cy="95" r="34" fill="rgba(255,255,255,0.2)" />
+  <text x="120" y="190" fill="#FFFFFF" font-size="68" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600" text-anchor="middle">
+    ME
+  </text>
+</svg>

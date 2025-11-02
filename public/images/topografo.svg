@@ -1,1 +1,32 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='#1A1A1A'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='#A6A6A6' font-size='48'>REEMPLAZAR IMAGEN</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad-topo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1A2B" />
+      <stop offset="100%" stop-color="#152F4A" />
+    </linearGradient>
+    <pattern id="grid-topo" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+      <path d="M0 0h60v60H0z" fill="none" stroke="#203B5E" stroke-width="1" />
+      <path d="M0 30h60M30 0v60" stroke="#284A76" stroke-width="1" opacity="0.5" />
+    </pattern>
+    <radialGradient id="sun-topo" cx="65%" cy="25%" r="35%">
+      <stop offset="0%" stop-color="#FFEDBB" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FFB347" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad-topo)" />
+  <rect width="1200" height="630" fill="url(#grid-topo)" opacity="0.45" />
+  <circle cx="780" cy="170" r="260" fill="url(#sun-topo)" />
+  <path d="M0 480c120-90 260-140 420-140s280 58 420 58 300-110 360-150v382H0z" fill="#0C1726" opacity="0.8" />
+  <path d="M0 510c140-70 300-110 460-110s280 45 420 45 240-60 320-100v285H0z" fill="#0F2235" opacity="0.9" />
+  <path d="M0 540c160-50 320-80 480-80s260 28 400 28 220-40 320-75v217H0z" fill="#12324E" />
+  <g fill="none" stroke="#4CA8FF" stroke-width="3" opacity="0.7">
+    <path d="M120 420c60-20 110-32 180-32s160 18 220 38 120 34 200 30 200-36 260-62" />
+    <path d="M90 460c80-24 140-40 210-40s150 15 210 35 120 45 210 42 190-40 240-60" />
+  </g>
+  <text x="80" y="140" fill="#FFFFFF" font-size="62" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600">
+    Operación Topógrafo
+  </text>
+  <text x="80" y="200" fill="#9BCBFF" font-size="32" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif">
+    Investigación y vigilancia digital
+  </text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <defs>
+    <linearGradient id="grad-exp-pm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04261B" />
+      <stop offset="100%" stop-color="#0B5037" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="48" fill="url(#grad-exp-pm)" />
+  <circle cx="120" cy="120" r="72" fill="rgba(255,255,255,0.08)" />
+  <circle cx="120" cy="120" r="44" fill="rgba(255,255,255,0.15)" />
+  <path d="M120 68v104" stroke="#D0FFEB" stroke-width="10" stroke-linecap="round" />
+  <path d="M68 120h104" stroke="#D0FFEB" stroke-width="10" stroke-linecap="round" />
+  <text x="120" y="206" fill="#E8FFF5" font-size="58" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600" text-anchor="middle">
+    PM
+  </text>
+</svg>

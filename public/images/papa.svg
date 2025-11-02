@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad-papa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172A0D" />
+      <stop offset="100%" stop-color="#384F1F" />
+    </linearGradient>
+    <radialGradient id="halo" cx="55%" cy="35%" r="45%">
+      <stop offset="0%" stop-color="#F4F6C7" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#F4F6C7" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad-papa)" />
+  <rect width="1200" height="630" fill="url(#halo)" />
+  <g opacity="0.25" stroke="#A4BB74" stroke-width="2">
+    <path d="M160 120h880M160 190h880M160 260h880M160 330h880M160 400h880M160 470h880" />
+    <path d="M290 90v470M500 90v470M710 90v470M920 90v470" />
+  </g>
+  <g transform="translate(360 140)">
+    <rect x="130" y="60" width="240" height="240" rx="40" fill="rgba(255,255,255,0.1)" />
+    <circle cx="250" cy="160" r="90" fill="#F9F7E3" />
+    <rect x="210" y="115" width="80" height="100" rx="40" fill="#E5DEB4" />
+    <rect x="220" y="180" width="60" height="120" rx="30" fill="#F9F7E3" />
+    <path d="M170 280h160" stroke="#F5F1D3" stroke-width="32" stroke-linecap="round" />
+    <path d="M220 70l10-30c6-18 30-18 36 0l10 30" fill="none" stroke="#F5F1D3" stroke-width="18" stroke-linecap="round" />
+    <path d="M250 40l0 70" stroke="#F5F1D3" stroke-width="12" stroke-linecap="round" />
+    <path d="M260 60l50-10" stroke="#F5F1D3" stroke-width="12" stroke-linecap="round" />
+    <path d="M240 60l-50-10" stroke="#F5F1D3" stroke-width="12" stroke-linecap="round" />
+  </g>
+  <text x="150" y="520" fill="#F4F7DD" font-size="58" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600">
+    El Papa en La Araucanía
+  </text>
+  <text x="150" y="570" fill="#CDE3A7" font-size="28" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif">
+    Encuentro intercultural y mensaje de paz
+  </text>
+</svg>

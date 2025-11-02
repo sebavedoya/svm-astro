@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad-ramiro" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B0B24" />
+      <stop offset="100%" stop-color="#301C51" />
+    </linearGradient>
+    <radialGradient id="focus" cx="60%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#F9D4FF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#6A2AA1" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad-ramiro)" />
+  <rect width="1200" height="630" fill="url(#focus)" />
+  <g opacity="0.4" stroke="#7A4EC3" stroke-width="2">
+    <path d="M200 120h800M200 190h800M200 260h800M200 330h800M200 400h800M200 470h800" />
+    <path d="M320 80v470M520 80v470M720 80v470M920 80v470" />
+  </g>
+  <g transform="translate(360 150)">
+    <rect x="70" y="60" width="340" height="260" rx="24" fill="rgba(255,255,255,0.08)" />
+    <rect x="120" y="110" width="240" height="160" rx="18" fill="#E9D5FF" opacity="0.2" />
+    <rect x="160" y="150" width="160" height="80" rx="14" fill="#F5E9FF" opacity="0.55" />
+    <circle cx="200" cy="240" r="26" fill="#F4F1FF" />
+    <circle cx="260" cy="240" r="26" fill="#F4F1FF" />
+    <path d="M120 320h240" stroke="#F4E0FF" stroke-width="26" stroke-linecap="round" />
+    <path d="M80 20l80 70M420 20l-80 70" stroke="#C69CFF" stroke-width="16" stroke-linecap="round" opacity="0.8" />
+  </g>
+  <text x="160" y="520" fill="#F4E9FF" font-size="58" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600">
+    La declaración de ‘Ramiro’
+  </text>
+  <text x="160" y="570" fill="#C9A8FF" font-size="28" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif">
+    Testimonio y memoria en tribunales
+  </text>
+</svg>

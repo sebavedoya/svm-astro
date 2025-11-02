@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad-digital" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#082032" />
+      <stop offset="100%" stop-color="#2C394B" />
+    </linearGradient>
+    <linearGradient id="accent-digital" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ADB5" />
+      <stop offset="100%" stop-color="#008891" />
+    </linearGradient>
+    <pattern id="grid-digital" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M0 0h50v50H0z" fill="none" stroke="#0F3A52" stroke-width="1" />
+      <circle cx="0" cy="0" r="3" fill="#0F3A52" />
+      <circle cx="50" cy="50" r="3" fill="#0F3A52" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad-digital)" />
+  <rect width="1200" height="630" fill="url(#grid-digital)" opacity="0.35" />
+  <g stroke="#00F5FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7">
+    <path d="M220 240h120l40 60h100l40-80h120l40 40h160l50-70h110" />
+    <path d="M260 420h90l40-70h120l45 50h150l60-90h120l50 30h120" opacity="0.5" />
+  </g>
+  <g fill="url(#accent-digital)">
+    <rect x="420" y="150" width="80" height="330" rx="40" />
+    <rect x="540" y="200" width="80" height="280" rx="40" />
+    <rect x="660" y="250" width="80" height="230" rx="40" />
+    <rect x="780" y="180" width="80" height="300" rx="40" />
+  </g>
+  <g fill="#061822">
+    <circle cx="460" cy="140" r="18" />
+    <circle cx="580" cy="190" r="18" />
+    <circle cx="700" cy="240" r="18" />
+    <circle cx="820" cy="170" r="18" />
+  </g>
+  <text x="140" y="520" fill="#E6FDFF" font-size="60" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600">
+    Comunicación digital
+  </text>
+  <text x="140" y="570" fill="#8EE6EA" font-size="30" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif">
+    Datos, workflows y formatos nativos conectados
+  </text>
+</svg>

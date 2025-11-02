@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad-lagos" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B0A0A" />
+      <stop offset="100%" stop-color="#5C2012" />
+    </linearGradient>
+    <linearGradient id="accent-lagos" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#FACC15" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad-lagos)" />
+  <g fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2">
+    <path d="M240 120h720M240 190h720M240 260h720M240 330h720M240 400h720M240 470h720" />
+    <path d="M350 80v470M520 80v470M690 80v470M860 80v470" />
+  </g>
+  <g transform="translate(360 140)">
+    <rect x="110" y="40" width="260" height="320" rx="36" fill="#FDE68A" opacity="0.15" />
+    <rect x="130" y="60" width="220" height="280" rx="28" fill="url(#accent-lagos)" />
+    <rect x="160" y="90" width="160" height="70" rx="20" fill="#F2F2F2" opacity="0.85" />
+    <rect x="160" y="180" width="160" height="110" rx="20" fill="#FAFAFA" opacity="0.2" />
+    <rect x="160" y="310" width="160" height="20" rx="10" fill="#F2F2F2" opacity="0.4" />
+    <path d="M40 200h60a30 30 0 0060 0h140a30 30 0 0060 0h60" fill="none" stroke="#FDE047" stroke-width="18" stroke-linecap="round" />
+  </g>
+  <text x="160" y="520" fill="#FDE68A" font-size="58" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600">
+    Ricardo Lagos
+  </text>
+  <text x="160" y="570" fill="#FBBF24" font-size="28" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif">
+    Perspectiva presidencial y desarrollo nacional
+  </text>
+</svg>

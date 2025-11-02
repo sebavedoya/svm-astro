@@ -3,13 +3,13 @@ import Default from '../layouts/DefaultLayout.astro';
 import Hero from '../components/Hero.tsx';
 
 const experiencia = [
-  { name: 'La Tercera', url: 'https://www.latercera.com/' },
-  { name: 'Ministerio de Educación', url: 'https://www.mineduc.cl/' },
-  { name: 'INDAP', url: 'https://www.indap.gob.cl/' },
-  { name: 'Municipalidad de Cerro Navia', url: 'https://www.cerronavia.cl/' },
-  { name: 'Publimetro', url: 'https://www.publimetro.cl/' },
-  { name: 'Subsecretaría de Telecomunicaciones', url: 'https://www.subtel.gob.cl/' },
-  { name: 'TVN', url: 'https://www.tvn.cl/' },
+  { name: 'La Tercera', url: 'https://www.latercera.com/', img: '/images/exp-la-tercera.svg' },
+  { name: 'Ministerio de Educación', url: 'https://www.mineduc.cl/', img: '/images/exp-mineduc.svg' },
+  { name: 'INDAP', url: 'https://www.indap.gob.cl/', img: '/images/exp-indap.svg' },
+  { name: 'Municipalidad de Cerro Navia', url: 'https://www.cerronavia.cl/', img: '/images/exp-cerro-navia.svg' },
+  { name: 'Publimetro', url: 'https://www.publimetro.cl/', img: '/images/exp-publimetro.svg' },
+  { name: 'Subsecretaría de Telecomunicaciones', url: 'https://www.subtel.gob.cl/', img: '/images/exp-subtel.svg' },
+  { name: 'TVN', url: 'https://www.tvn.cl/', img: '/images/exp-tvn.svg' },
 ];
 
 const sistemaIntro =
@@ -124,9 +124,22 @@ const prensa = [
   <Hero client:load />
   <section id="experiencia" class="max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-2xl font-heading border-b-2 border-accent inline-block mb-10">Experiencia</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-text-dim">
+    <div class="grid grid-cols-2 gap-6 text-text-dim sm:grid-cols-3 lg:grid-cols-4">
       {experiencia.map((e) => (
-        <a class="hover:text-accent transition-colors" href={e.url} rel="noopener" target="_blank">{e.name}</a>
+        <a
+          class="group flex flex-col items-center gap-4 rounded-2xl border border-white/5 bg-bg-card/40 p-6 text-center transition hover:-translate-y-1 hover:border-accent/60 hover:bg-bg-card/70"
+          href={e.url}
+          rel="noopener"
+          target="_blank"
+        >
+          <img
+            src={e.img}
+            alt={`Experiencia con ${e.name}`}
+            class="w-28 shrink-0 rounded-2xl border border-white/5 shadow-lg transition group-hover:border-accent/60"
+            loading="lazy"
+          />
+          <span class="text-sm font-semibold tracking-wide text-white group-hover:text-accent">{e.name}</span>
+        </a>
       ))}
     </div>
   </section>
@@ -158,7 +171,7 @@ const prensa = [
     <div class="grid md:grid-cols-3 gap-8">
       {proyectos.map((p) => (
         <article class="bg-bg-card rounded-2xl overflow-hidden transition hover:scale-[1.02]">
-          <img src={p.img} alt={p.title} class="w-full h-44 object-cover" />
+          <img src={p.img} alt={p.title} class="w-full h-44 object-cover" loading="lazy" />
           <div class="p-6 flex flex-col gap-4">
             <div>
               <h3 class="text-xl font-semibold">{p.title}</h3>
@@ -189,7 +202,7 @@ const prensa = [
     <div class="grid md:grid-cols-3 gap-8">
       {prensa.map((n) => (
         <a href={n.url} target="_blank" rel="noopener" class="bg-bg-card rounded-2xl overflow-hidden hover:scale-[1.02] transition block">
-          <img src={n.img} alt={n.title} class="w-full h-44 object-cover" />
+          <img src={n.img} alt={n.title} class="w-full h-44 object-cover" loading="lazy" />
           <div class="p-6">
             <h3 class="text-lg font-semibold">{n.title}</h3>
           </div>

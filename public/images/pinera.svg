@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad-pinera" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001B36" />
+      <stop offset="100%" stop-color="#012B5A" />
+    </linearGradient>
+    <linearGradient id="band-pinera" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F24E1E" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#1A91F0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad-pinera)" />
+  <g opacity="0.5" stroke="#1E4F8A" stroke-width="2">
+    <path d="M140 110h920M140 180h920M140 250h920M140 320h920M140 390h920M140 460h920" />
+    <path d="M260 70v500M440 70v500M620 70v500M800 70v500M980 70v500" />
+  </g>
+  <g transform="translate(360 150)">
+    <rect x="150" y="110" width="280" height="220" rx="60" fill="rgba(255,255,255,0.08)" />
+    <path d="M150 220h280" stroke="url(#band-pinera)" stroke-width="90" stroke-linecap="round" />
+    <circle cx="180" cy="220" r="90" fill="#0A2540" />
+    <path d="M170 160l24 74-68-48h84l-68 48z" fill="#F7FAFF" />
+    <path d="M330 120c40 0 60 30 60 60s-20 60-60 60" fill="none" stroke="#E3F2FF" stroke-width="18" stroke-linecap="round" />
+    <path d="M370 140c30 0 45 20 45 40s-15 40-45 40" fill="none" stroke="#8EC5FF" stroke-width="14" stroke-linecap="round" />
+  </g>
+  <text x="160" y="520" fill="#E2F1FF" font-size="58" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600">
+    Sebastián Piñera
+  </text>
+  <text x="160" y="570" fill="#8EC5FF" font-size="30" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif">
+    Liderazgo económico y visión empresarial
+  </text>
+</svg>

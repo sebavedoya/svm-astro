@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad-voice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18122B" />
+      <stop offset="100%" stop-color="#3B1D5C" />
+    </linearGradient>
+    <linearGradient id="beam" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#9F7BFF" stop-opacity="0" />
+      <stop offset="100%" stop-color="#9F7BFF" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad-voice)" />
+  <g opacity="0.2" fill="none" stroke="#C9A7FF" stroke-width="2">
+    <path d="M180 120h840M180 190h840M180 260h840M180 330h840M180 400h840M180 470h840" />
+    <path d="M340 70v490M520 70v490M700 70v490M880 70v490" />
+  </g>
+  <g transform="translate(320 120)">
+    <rect x="270" y="50" width="360" height="360" rx="180" fill="url(#beam)" opacity="0.8" />
+    <circle cx="240" cy="210" r="160" fill="#F5F3FF" />
+    <circle cx="240" cy="210" r="130" fill="#7E5CF7" />
+    <rect x="200" y="100" width="80" height="220" rx="40" fill="#F5F3FF" />
+    <rect x="160" y="150" width="160" height="120" rx="60" fill="#F5F3FF" />
+    <path d="M440 70c60 20 110 60 110 140s-50 120-110 140" fill="none" stroke="#F5F3FF" stroke-width="24" stroke-linecap="round" />
+    <path d="M410 120c40 15 75 46 75 90s-35 75-75 90" fill="none" stroke="#CBB6FF" stroke-width="18" stroke-linecap="round" />
+    <path d="M390 170c30 10 55 32 55 60s-25 50-55 60" fill="none" stroke="#9575FF" stroke-width="14" stroke-linecap="round" />
+  </g>
+  <text x="180" y="520" fill="#FFFFFF" font-size="60" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif" font-weight="600">
+    Vocerías y despliegue
+  </text>
+  <text x="180" y="570" fill="#D9C4FF" font-size="30" font-family="Inter, 'IBM Plex Sans', Arial, sans-serif">
+    Estrategia, entrenamiento y coherencia de mensajes
+  </text>
+</svg>
