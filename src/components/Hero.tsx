@@ -9,22 +9,38 @@ export default function Hero() {
         transition={{ duration: 0.7 }}
         className="max-w-xl"
       >
-        <h2 className="text-5xl font-heading leading-tight md:text-6xl">
-          Comunicación Estratégica
+        <h1 className="text-5xl font-heading leading-tight md:text-6xl">
+          Sebastián Vedoya M.
           <br />
-          <span className="text-accent">para entornos complejos</span>
-        </h2>
+          <span className="text-accent">Comunicación Estratégica</span>
+        </h1>
         <p className="text-text-dim mt-6 text-lg">
-          Estratega en comunicación con más de 10 años de experiencia en medios y gobierno. Busco respuestas complejas
-          para entornos complejos.
+          Estratega en comunicación con más de 10 años de experiencia en medios y gobierno. Me dedico a buscar respuestas
+          complejas para entornos complejos.
         </p>
-        <motion.a
-          href="/files/CV.pdf"
-          className="mt-10 inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#d73732]"
-          whileHover={{ scale: 1.04 }}
-        >
-          Descargar CV
-        </motion.a>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <motion.a
+            href="/files/CV.pdf"
+            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#d73732]"
+            whileHover={{ scale: 1.04 }}
+          >
+            Descargar CV
+          </motion.a>
+          <a
+            href="mailto:seba.vedoya@gmail.com"
+            className="inline-flex items-center rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent hover:text-accent"
+          >
+            seba.vedoya@gmail.com
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sebastianvedoyam/"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent hover:text-accent"
+          >
+            LinkedIn
+          </a>
+        </div>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}

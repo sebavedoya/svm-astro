@@ -9,60 +9,32 @@ const experiencia = [
   { name: 'Municipalidad de Cerro Navia', url: 'https://www.cerronavia.cl/', img: '/images/exp-cerro-navia.svg' },
   { name: 'Publimetro', url: 'https://www.publimetro.cl/', img: '/images/exp-publimetro.svg' },
   { name: 'Subsecretaría de Telecomunicaciones', url: 'https://www.subtel.gob.cl/', img: '/images/exp-subtel.svg' },
-  { name: 'TVN', url: 'https://www.tvn.cl/', img: '/images/exp-tvn.svg' },
+  { name: 'Televisión Nacional de Chile', url: 'https://www.tvn.cl/', img: '/images/exp-tvn.svg' },
 ];
 
-const sistemaIntro =
-  'Modelo de trabajo basado en análisis, diseño narrativo y conducción. Integra datos, metodologías de crisis y workflows editoriales medibles.';
-
-const sistema = [
-  {
-    title: 'Análisis',
-    description: 'Comprensión estructural de entornos comunicacionales complejos.',
-    bullets: [
-      'Mapeo de actores y riesgos.',
-      'Arquitectura de mensajes multicanal.',
-      'Instrumentación GA4/Tag Manager.',
-    ],
-  },
-  {
-    title: 'Diseño narrativo',
-    description: 'Construcción de relatos institucionales coherentes y medibles.',
-    bullets: [
-      'Relato maestro y bancos de mensajes.',
-      'Guías de vocería y matrices Q&A.',
-      'Formatos nativos y kits visuales.',
-    ],
-  },
-  {
-    title: 'Conducción',
-    description: 'Gestión y dirección estratégica de equipos y crisis comunicacionales.',
-    bullets: [
-      'Gobernanza editorial y crisis rooms.',
-      'KPIs e iteración continua.',
-      'Entrenamiento a portavoces.',
-    ],
-  },
-];
+const systemQuote = {
+  text: 'Ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede igualarlo, debe aprender a domesticarlo.',
+  author: 'Ross Ashby',
+};
 
 const proyectos = [
   {
     slug: 'operacion-topografo',
     title: 'Operación Topógrafo',
     img: '/images/topografo.svg',
-    desc: 'Investigación que expuso el espionaje del Ejército a periodistas y denunciantes, con repercusiones judiciales y mediáticas.',
+    desc: 'Investigación que reveló espionaje militar a periodistas y denunciantes.',
   },
   {
     slug: 'vocerias-y-despliegue',
     title: 'Vocerías y despliegue',
     img: '/images/vocerias.svg',
-    desc: 'Lineamientos, preparación de portavoces y estandarización de mensajes para un despliegue coherente en medios, regiones y redes.',
+    desc: 'Fortalecimiento de vocerías y coherencia comunicacional en terreno.',
   },
   {
     slug: 'comunicacion-digital',
     title: 'Comunicación digital',
     img: '/images/digital.svg',
-    desc: 'Reorientación a formatos nativos, workflows editoriales y medición para mejorar alcance, retención y reputación.',
+    desc: 'Estrategia y formatos nativos para alto rendimiento.',
   },
 ];
 
@@ -70,51 +42,54 @@ const reflexiones = [
   {
     slug: 'la-ley-de-la-variedad-requerida',
     title: 'La ley de la variedad requerida y el desafío comunicacional contemporáneo',
-    summary:
-      'Ashby enseñó que ningún actor puede controlar su entorno sin igualarlo en complejidad. La comunicación estratégica debe domesticar la variedad con mensajes y canales sincronizados.',
+    summary: 'Ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede, debe domesticarlo.',
   },
   {
     slug: 'autoridades-y-redes-sociales',
     title: 'Autoridades y redes sociales: una confusión frecuente',
-    summary:
-      'Las redes institucionales no son bitácoras personales de autoridades. Liberar a los equipos para crear valor y cercanía construye comunidad y visibilidad real.',
+    summary: 'Las redes institucionales no son un canal 24/7 para cronicar agendas personales.',
   },
   {
     slug: 'comunicar-sin-miedo',
     title: 'Comunicar sin miedo',
-    summary:
-      'El temor a exponerse inmoviliza. La preparación y la escucha activa permiten convertir cada conversación en una oportunidad, como demuestra el ejemplo de Rapa Nui.',
+    summary: 'Preparación, confianza y escucha activa superan el temor a exponerse.',
   },
 ];
 
 const prensa = [
   {
     title: 'Operación Topógrafo — Espionaje del Ejército a denunciantes',
+    outlet: 'La Tercera',
     img: '/images/topografo.svg',
     url: 'https://www.latercera.com/reportajes/noticia/operacion-topografo-espionaje-del-ejercito-cuatro-denunciantes-irregularidades/777342/',
   },
   {
     title: 'Ricardo Lagos: “Durante mi gobierno no privaticé nada, al contrario”',
+    outlet: 'Publimetro',
     img: '/images/lagos.svg',
     url: 'https://www.publimetro.cl/cl/noticias/2016/11/18/ex-presidente-lagos-durante-mi-gobierno-no-privatice-nada-contrario.html',
   },
   {
     title: 'Sebastián Piñera: “Me siento orgulloso de lo que he logrado en la vida”',
+    outlet: 'Publimetro',
     img: '/images/pinera.svg',
     url: 'https://www.publimetro.cl/cl/noticias/2017/06/19/sebastian-pinera-me-siento-orgulloso-lo-he-logrado-vida.html',
   },
   {
     title: 'Hernán Larraín: “No somos partidarios de indultar a violadores de DD.HH. ni asesinos en serie”',
+    outlet: 'La Tercera',
     img: '/images/larrain.svg',
     url: 'https://www.latercera.com/nacional/noticia/hernan-larrain-ministro-justicia-derechos-humanos-no-somos-partidarios-indultar-violadores-dd-hh-asesinos-serie/111533/',
   },
   {
     title: 'La declaración de ‘Ramiro’ ante Carroza',
+    outlet: 'La Tercera',
     img: '/images/ramiro.svg',
     url: 'https://www.latercera.com/la-tercera-pm/noticia/la-declaracion-ramiro-carroza-estoy-seguro-estaba-privado-libertad-detencion-preventiva/792779/',
   },
   {
     title: "El Papa en La Araucanía: 'Mari Mari, peñi, lamngen'",
+    outlet: 'La Tercera',
     img: '/images/papa.svg',
     url: 'https://www.latercera.com/noticia/papa-la-araucania-mari-mari/',
   },
@@ -143,30 +118,17 @@ const prensa = [
       ))}
     </div>
   </section>
-  <section id="sistema" class="max-w-6xl mx-auto px-6 py-16">
-    <div class="max-w-3xl">
-      <h2 class="text-3xl font-heading mb-4">Sistema</h2>
-      <p class="text-text-dim">{sistemaIntro}</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8 mt-10">
-      {sistema.map((bloque) => (
-        <div class="bg-bg-card rounded-2xl p-8">
-          <h3 class="text-xl font-semibold mb-2">{bloque.title}</h3>
-          <p class="text-text-dim text-sm mb-4">{bloque.description}</p>
-          <ul class="list-disc list-inside text-text-dim text-sm space-y-1">
-            {bloque.bullets.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
+  <section id="sistema" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-heading mb-6">Sistema</h2>
+    <blockquote class="rounded-2xl border border-black/10 bg-bg-card p-10 text-lg text-text-dim shadow-sm">
+      <p class="leading-relaxed text-text-light">{systemQuote.text}</p>
+      <span class="mt-4 block text-sm font-semibold text-text-dim">— {systemQuote.author}</span>
+    </blockquote>
   </section>
   <section id="proyectos" class="max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Proyectos</h2>
     <p class="text-text-dim max-w-3xl mb-10">
-      Casos recientes que combinan investigación, despliegue comunicacional y rediseño digital. Cada proyecto incluye metodología a medida,
-      gobernanza de mensajes y métricas para evaluar impacto.
+      Una selección de casos con impacto, contados en tarjetas con profundidad.
     </p>
     <div class="grid md:grid-cols-3 gap-8">
       {proyectos.map((p) => (
@@ -177,7 +139,7 @@ const prensa = [
               <h3 class="text-xl font-semibold">{p.title}</h3>
               <p class="text-text-dim text-sm mt-2">{p.desc}</p>
             </div>
-            <a class="text-accent text-sm font-semibold" href={`/proyectos/${p.slug}/`}>Leer caso</a>
+            <a class="text-accent text-sm font-semibold" href={`/proyectos/${p.slug}/`}>Ver caso</a>
           </div>
         </article>
       ))}
@@ -185,25 +147,25 @@ const prensa = [
   </section>
   <section id="reflexiones" class="max-w-4xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Reflexiones</h2>
-    <p class="text-text-dim mb-8">Ideas y aprendizajes sobre comunicación estratégica, liderazgo público y construcción de confianza.</p>
+    <p class="text-text-dim mb-8">Ensayos breves sobre estrategia, vocerías y comunicación pública.</p>
     <div class="space-y-8">
       {reflexiones.map((nota) => (
         <article class="bg-bg-card rounded-2xl border border-black/10 p-8 shadow-sm flex flex-col gap-4">
           <h3 class="text-2xl font-semibold">{nota.title}</h3>
           <p class="text-text-dim">{nota.summary}</p>
-          <a class="text-accent font-semibold text-sm" href={`/reflexiones/${nota.slug}/`}>Leer reflexión</a>
+          <a class="text-accent font-semibold text-sm" href={`/reflexiones/${nota.slug}/`}>Leer completa</a>
         </article>
       ))}
     </div>
   </section>
   <section id="prensa" class="max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Prensa</h2>
-    <p class="text-text-dim max-w-3xl mb-10">Reportajes y entrevistas que han marcado la agenda y profundizado en desafíos de política pública.</p>
     <div class="grid md:grid-cols-3 gap-8">
       {prensa.map((n) => (
         <a href={n.url} target="_blank" rel="noopener" class="block rounded-2xl border border-black/10 bg-bg-card overflow-hidden shadow-sm transition hover:scale-[1.02] hover:shadow-md">
           <img src={n.img} alt={n.title} class="w-full h-44 object-cover" loading="lazy" />
           <div class="p-6">
+            <span class="text-sm uppercase tracking-wide text-text-dim">{n.outlet}</span>
             <h3 class="text-lg font-semibold">{n.title}</h3>
           </div>
         </a>
