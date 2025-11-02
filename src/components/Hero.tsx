@@ -20,7 +20,7 @@ export default function Hero() {
         </p>
         <motion.a
           href="/files/CV.pdf"
-          className="mt-10 inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#0099b0]"
+          className="mt-10 inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#d73732]"
           whileHover={{ scale: 1.04 }}
         >
           Descargar CV
@@ -32,11 +32,11 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.15 }}
         className="relative w-full max-w-md"
       >
-        <div className="absolute inset-0 rounded-[2.5rem] bg-accent/20 blur-3xl" aria-hidden="true" />
+        <div className="absolute inset-0 rounded-[2.5rem] bg-accent/15 blur-3xl" aria-hidden="true" />
         <img
           src="/images/hero-illustration.svg"
           alt="Ilustración de trabajo estratégico en comunicación"
-          className="relative w-full rounded-[2.5rem] border border-white/10 shadow-2xl"
+          className="relative w-full rounded-[2.5rem] border border-black/10 shadow-2xl"
           loading="lazy"
         />
       </motion.div>

@@ -28,10 +28,10 @@ const navLinks = [
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Inter+Tight:wght@600;700&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0D0D0D" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="theme-color" content="#F6F2EA" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -70,9 +70,9 @@ const navLinks = [
     </script>
   </head>
   <body class="font-body">
-    <header class="fixed top-0 left-0 z-50 w-full bg-black/40 px-6 py-4 backdrop-blur-md md:px-10">
+    <header class="fixed top-0 left-0 z-50 w-full border-b border-black/10 bg-white/80 px-6 py-4 backdrop-blur-md md:px-10">
       <div class="mx-auto flex max-w-6xl items-center justify-between">
-        <a href="/" class="font-heading tracking-wide">Sebastián Vedoya M.</a>
+        <a href="/" class="font-heading text-lg tracking-wider text-text-light transition hover:text-accent">Sebastián Vedoya M.</a>
         <nav class="hidden gap-6 text-sm text-text-dim md:flex">
           {navLinks.map(({ href, label }) => (
             <a href={href} class="transition-colors hover:text-accent">{label}</a>
@@ -80,7 +80,7 @@ const navLinks = [
         </nav>
       </div>
     </header>
-    <main class="pt-24 min-h-screen">
+    <main class="min-h-screen pt-24">
       <slot />
     </main>
     <Footer />

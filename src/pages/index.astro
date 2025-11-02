@@ -127,7 +127,7 @@ const prensa = [
     <div class="grid grid-cols-2 gap-6 text-text-dim sm:grid-cols-3 lg:grid-cols-4">
       {experiencia.map((e) => (
         <a
-          class="group flex flex-col items-center gap-4 rounded-2xl border border-white/5 bg-bg-card/40 p-6 text-center transition hover:-translate-y-1 hover:border-accent/60 hover:bg-bg-card/70"
+          class="group flex flex-col items-center gap-4 rounded-2xl border border-black/10 bg-bg-card p-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg"
           href={e.url}
           rel="noopener"
           target="_blank"
@@ -135,10 +135,10 @@ const prensa = [
           <img
             src={e.img}
             alt={`Experiencia con ${e.name}`}
-            class="w-28 shrink-0 rounded-2xl border border-white/5 shadow-lg transition group-hover:border-accent/60"
+            class="w-28 shrink-0 rounded-2xl border border-black/10 transition group-hover:border-accent/50"
             loading="lazy"
           />
-          <span class="text-sm font-semibold tracking-wide text-white group-hover:text-accent">{e.name}</span>
+          <span class="text-sm font-semibold tracking-wide text-text-light group-hover:text-accent">{e.name}</span>
         </a>
       ))}
     </div>
@@ -170,7 +170,7 @@ const prensa = [
     </p>
     <div class="grid md:grid-cols-3 gap-8">
       {proyectos.map((p) => (
-        <article class="bg-bg-card rounded-2xl overflow-hidden transition hover:scale-[1.02]">
+        <article class="bg-bg-card rounded-2xl border border-black/10 overflow-hidden shadow-sm transition hover:scale-[1.02] hover:shadow-md">
           <img src={p.img} alt={p.title} class="w-full h-44 object-cover" loading="lazy" />
           <div class="p-6 flex flex-col gap-4">
             <div>
@@ -188,7 +188,7 @@ const prensa = [
     <p class="text-text-dim mb-8">Ideas y aprendizajes sobre comunicación estratégica, liderazgo público y construcción de confianza.</p>
     <div class="space-y-8">
       {reflexiones.map((nota) => (
-        <article class="bg-bg-card rounded-2xl p-8 flex flex-col gap-4">
+        <article class="bg-bg-card rounded-2xl border border-black/10 p-8 shadow-sm flex flex-col gap-4">
           <h3 class="text-2xl font-semibold">{nota.title}</h3>
           <p class="text-text-dim">{nota.summary}</p>
           <a class="text-accent font-semibold text-sm" href={`/reflexiones/${nota.slug}/`}>Leer reflexión</a>
@@ -201,7 +201,7 @@ const prensa = [
     <p class="text-text-dim max-w-3xl mb-10">Reportajes y entrevistas que han marcado la agenda y profundizado en desafíos de política pública.</p>
     <div class="grid md:grid-cols-3 gap-8">
       {prensa.map((n) => (
-        <a href={n.url} target="_blank" rel="noopener" class="bg-bg-card rounded-2xl overflow-hidden hover:scale-[1.02] transition block">
+        <a href={n.url} target="_blank" rel="noopener" class="block rounded-2xl border border-black/10 bg-bg-card overflow-hidden shadow-sm transition hover:scale-[1.02] hover:shadow-md">
           <img src={n.img} alt={n.title} class="w-full h-44 object-cover" loading="lazy" />
           <div class="p-6">
             <h3 class="text-lg font-semibold">{n.title}</h3>
