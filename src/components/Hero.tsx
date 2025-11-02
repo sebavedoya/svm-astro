@@ -12,7 +12,7 @@ export default function Hero() {
         <h1 className="text-5xl font-heading leading-tight md:text-6xl">
           Sebastián Vedoya M.
           <br />
-          <span className="text-accent">Comunicación Estratégica</span>
+          <span className="text-accent-alt">Comunicación Estratégica</span>
         </h1>
         <p className="text-text-dim mt-6 text-lg">
           Estratega en comunicación con más de 10 años de experiencia en medios y gobierno. Me dedico a buscar respuestas
@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <motion.a
             href="/files/CV.pdf"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#e44124]"
+            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light"
             whileHover={{ scale: 1.04 }}
           >
             Descargar CV

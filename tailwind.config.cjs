@@ -8,7 +8,7 @@ module.exports = {
         'bg-card': '#FFFFFF',
         'text-light': '#141414',
         'text-dim': '#555968',
-        'accent': '#FF4C2B',
+        'accent': '#141414',
         'accent-alt': '#FFE873',
       },
       fontFamily: {

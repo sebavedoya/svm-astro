@@ -113,7 +113,7 @@ const prensa = [
             class="w-28 shrink-0 rounded-2xl border border-black/5 transition group-hover:border-accent/50"
             loading="lazy"
           />
-          <span class="text-sm font-semibold tracking-wide text-text-light group-hover:text-accent">{e.name}</span>
+          <span class="text-sm font-semibold tracking-wide text-text-light group-hover:text-accent-alt">{e.name}</span>
         </a>
       ))}
     </div>
@@ -139,7 +139,7 @@ const prensa = [
               <h3 class="text-xl font-semibold">{p.title}</h3>
               <p class="text-text-dim text-sm mt-2">{p.desc}</p>
             </div>
-            <a class="text-accent text-sm font-semibold" href={`/proyectos/${p.slug}/`}>Ver caso</a>
+            <a class="text-accent-alt text-sm font-semibold" href={`/proyectos/${p.slug}/`}>Ver caso</a>
           </div>
         </article>
       ))}
@@ -153,7 +153,7 @@ const prensa = [
         <article class="bg-bg-card rounded-2xl border border-black/5 p-8 shadow-[0_18px_36px_rgba(20,20,20,0.08)] flex flex-col gap-4 transition hover:-translate-y-1 hover:shadow-[0_24px_46px_rgba(20,20,20,0.12)]">
           <h3 class="text-2xl font-semibold">{nota.title}</h3>
           <p class="text-text-dim">{nota.summary}</p>
-          <a class="text-accent font-semibold text-sm" href={`/reflexiones/${nota.slug}/`}>Leer completa</a>
+          <a class="text-accent-alt font-semibold text-sm" href={`/reflexiones/${nota.slug}/`}>Leer completa</a>
         </article>
       ))}
     </div>
@@ -177,17 +177,17 @@ const prensa = [
       <h2 class="text-3xl font-heading mb-4">¿Conversamos?</h2>
       <p class="text-text-dim">Escríbeme y revisa mi CV.</p>
       <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="mailto:seba.vedoya@gmail.com" class="inline-flex items-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#e44124]">
+        <a href="mailto:seba.vedoya@gmail.com" class="inline-flex items-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light">
           seba.vedoya@gmail.com
         </a>
-        <a href="/files/CV.pdf" class="inline-flex items-center rounded-full border border-black/10 px-6 py-3 font-semibold text-text-light transition hover:border-accent hover:text-accent">
+        <a href="/files/CV.pdf" class="inline-flex items-center rounded-full border border-black/10 px-6 py-3 font-semibold text-text-light transition hover:border-accent hover:text-accent-alt">
           Descargar CV
         </a>
         <a
           href="https://www.linkedin.com/in/sebastianvedoyam/"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center rounded-full bg-accent-alt px-6 py-3 font-semibold text-text-light transition hover:bg-[#ffe24f]"
+          class="inline-flex items-center rounded-full bg-accent-alt px-6 py-3 font-semibold text-text-light transition hover:bg-accent-alt/80"
         >
           LinkedIn
         </a>

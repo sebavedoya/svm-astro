@@ -72,10 +72,10 @@ const navLinks = [
   <body class="font-body">
     <header class="fixed top-0 left-0 z-50 w-full border-b border-black/5 bg-bg-main/80 px-6 py-4 backdrop-blur-md md:px-10">
       <div class="mx-auto flex max-w-6xl items-center justify-between">
-        <a href="/" class="font-heading text-lg tracking-wider text-text-light transition hover:text-accent">Sebastián Vedoya M.</a>
+        <a href="/" class="font-heading text-lg tracking-wider text-text-light transition hover:text-accent-alt">Sebastián Vedoya M.</a>
         <nav class="hidden gap-6 text-sm text-text-dim md:flex">
           {navLinks.map(({ href, label }) => (
-            <a href={href} class="transition-colors hover:text-accent">{label}</a>
+            <a href={href} class="transition-colors hover:text-accent-alt">{label}</a>
           ))}
         </nav>
       </div>
