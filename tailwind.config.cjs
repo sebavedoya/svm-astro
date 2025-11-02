@@ -4,12 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'bg-main': '#F6F2EA',
+        'bg-main': '#F7F4ED',
         'bg-card': '#FFFFFF',
-        'text-light': '#1A1A1A',
-        'text-dim': '#4B5563',
-        'accent': '#F9423A',
-        'accent-alt': '#FFE36E',
+        'text-light': '#141414',
+        'text-dim': '#555968',
+        'accent': '#FF4C2B',
+        'accent-alt': '#FFE873',
       },
       fontFamily: {
         heading: ['"Space Grotesk"', 'sans-serif'],

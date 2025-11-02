@@ -21,14 +21,14 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <motion.a
             href="/files/CV.pdf"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#d73732]"
+            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#e44124]"
             whileHover={{ scale: 1.04 }}
           >
             Descargar CV
           </motion.a>
           <a
             href="mailto:seba.vedoya@gmail.com"
-            className="inline-flex items-center rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent hover:text-accent"
+            className="inline-flex items-center rounded-full bg-accent-alt px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-[#ffe24f]"
           >
             seba.vedoya@gmail.com
           </a>
@@ -36,7 +36,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/sebastianvedoyam/"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent hover:text-accent"
+            className="inline-flex items-center rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent hover:bg-white"
           >
             LinkedIn
           </a>
@@ -48,7 +48,7 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.15 }}
         className="relative w-full max-w-md"
       >
-        <div className="absolute inset-0 rounded-[2.5rem] bg-accent/15 blur-3xl" aria-hidden="true" />
+        <div className="absolute inset-0 rounded-[2.5rem] bg-accent-alt/40 blur-3xl" aria-hidden="true" />
         <img
           src="/images/hero-illustration.svg"
           alt="Ilustración de trabajo estratégico en comunicación"

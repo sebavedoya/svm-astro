@@ -102,7 +102,7 @@ const prensa = [
     <div class="grid grid-cols-2 gap-6 text-text-dim sm:grid-cols-3 lg:grid-cols-4">
       {experiencia.map((e) => (
         <a
-          class="group flex flex-col items-center gap-4 rounded-2xl border border-black/10 bg-bg-card p-6 text-center shadow-sm transition hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg"
+          class="group flex flex-col items-center gap-4 rounded-2xl border border-black/5 bg-bg-card p-6 text-center shadow-[0_12px_30px_rgba(20,20,20,0.08)] transition hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_18px_36px_rgba(20,20,20,0.12)]"
           href={e.url}
           rel="noopener"
           target="_blank"
@@ -110,7 +110,7 @@ const prensa = [
           <img
             src={e.img}
             alt={`Experiencia con ${e.name}`}
-            class="w-28 shrink-0 rounded-2xl border border-black/10 transition group-hover:border-accent/50"
+            class="w-28 shrink-0 rounded-2xl border border-black/5 transition group-hover:border-accent/50"
             loading="lazy"
           />
           <span class="text-sm font-semibold tracking-wide text-text-light group-hover:text-accent">{e.name}</span>
@@ -120,7 +120,7 @@ const prensa = [
   </section>
   <section id="sistema" class="max-w-4xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Sistema</h2>
-    <blockquote class="rounded-2xl border border-black/10 bg-bg-card p-10 text-lg text-text-dim shadow-sm">
+    <blockquote class="rounded-2xl border border-black/5 bg-bg-card p-10 text-lg text-text-dim shadow-[0_16px_36px_rgba(20,20,20,0.08)]">
       <p class="leading-relaxed text-text-light">{systemQuote.text}</p>
       <span class="mt-4 block text-sm font-semibold text-text-dim">— {systemQuote.author}</span>
     </blockquote>
@@ -132,7 +132,7 @@ const prensa = [
     </p>
     <div class="grid md:grid-cols-3 gap-8">
       {proyectos.map((p) => (
-        <article class="bg-bg-card rounded-2xl border border-black/10 overflow-hidden shadow-sm transition hover:scale-[1.02] hover:shadow-md">
+        <article class="bg-bg-card rounded-2xl border border-black/5 overflow-hidden shadow-[0_20px_40px_rgba(20,20,20,0.08)] transition hover:-translate-y-1 hover:shadow-[0_26px_48px_rgba(20,20,20,0.12)]">
           <img src={p.img} alt={p.title} class="w-full h-44 object-cover" loading="lazy" />
           <div class="p-6 flex flex-col gap-4">
             <div>
@@ -150,7 +150,7 @@ const prensa = [
     <p class="text-text-dim mb-8">Ensayos breves sobre estrategia, vocerías y comunicación pública.</p>
     <div class="space-y-8">
       {reflexiones.map((nota) => (
-        <article class="bg-bg-card rounded-2xl border border-black/10 p-8 shadow-sm flex flex-col gap-4">
+        <article class="bg-bg-card rounded-2xl border border-black/5 p-8 shadow-[0_18px_36px_rgba(20,20,20,0.08)] flex flex-col gap-4 transition hover:-translate-y-1 hover:shadow-[0_24px_46px_rgba(20,20,20,0.12)]">
           <h3 class="text-2xl font-semibold">{nota.title}</h3>
           <p class="text-text-dim">{nota.summary}</p>
           <a class="text-accent font-semibold text-sm" href={`/reflexiones/${nota.slug}/`}>Leer completa</a>
@@ -162,7 +162,7 @@ const prensa = [
     <h2 class="text-3xl font-heading mb-6">Prensa</h2>
     <div class="grid md:grid-cols-3 gap-8">
       {prensa.map((n) => (
-        <a href={n.url} target="_blank" rel="noopener" class="block rounded-2xl border border-black/10 bg-bg-card overflow-hidden shadow-sm transition hover:scale-[1.02] hover:shadow-md">
+        <a href={n.url} target="_blank" rel="noopener" class="block rounded-2xl border border-black/5 bg-bg-card overflow-hidden shadow-[0_18px_36px_rgba(20,20,20,0.08)] transition hover:-translate-y-1 hover:shadow-[0_24px_46px_rgba(20,20,20,0.12)]">
           <img src={n.img} alt={n.title} class="w-full h-44 object-cover" loading="lazy" />
           <div class="p-6">
             <span class="text-sm uppercase tracking-wide text-text-dim">{n.outlet}</span>
@@ -172,13 +172,26 @@ const prensa = [
       ))}
     </div>
   </section>
-  <section id="contacto" class="max-w-3xl mx-auto px-6 py-16 text-center">
-    <h2 class="text-3xl font-heading mb-6">¿Conversamos?</h2>
-    <p class="text-text-dim">Escríbeme y revisa mi CV.</p>
-    <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="mailto:seba.vedoya@gmail.com" class="bg-accent px-5 py-3 rounded-xl text-white font-semibold hover:bg-[#0099b0]">seba.vedoya@gmail.com</a>
-      <a href="/files/CV.pdf" class="px-5 py-3 rounded-xl border border-accent text-accent hover:bg-accent hover:text-white transition">Descargar CV</a>
-      <a href="https://www.linkedin.com/in/sebastianvedoyam/" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-text-dim text-text-dim hover:text-accent">LinkedIn</a>
+  <section id="contacto" class="max-w-3xl mx-auto px-6 py-16">
+    <div class="rounded-2xl border border-black/5 bg-bg-card px-8 py-12 text-center shadow-[0_20px_40px_rgba(20,20,20,0.08)]">
+      <h2 class="text-3xl font-heading mb-4">¿Conversamos?</h2>
+      <p class="text-text-dim">Escríbeme y revisa mi CV.</p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="mailto:seba.vedoya@gmail.com" class="inline-flex items-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-[#e44124]">
+          seba.vedoya@gmail.com
+        </a>
+        <a href="/files/CV.pdf" class="inline-flex items-center rounded-full border border-black/10 px-6 py-3 font-semibold text-text-light transition hover:border-accent hover:text-accent">
+          Descargar CV
+        </a>
+        <a
+          href="https://www.linkedin.com/in/sebastianvedoyam/"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center rounded-full bg-accent-alt px-6 py-3 font-semibold text-text-light transition hover:bg-[#ffe24f]"
+        >
+          LinkedIn
+        </a>
+      </div>
     </div>
   </section>
 </Default>
