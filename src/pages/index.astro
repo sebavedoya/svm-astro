@@ -209,9 +209,9 @@ const prensa = [
               <h3 class="text-2xl font-semibold leading-tight text-text-light">
                 <span class="title-highlight">{p.title}</span>
               </h3>
-              <p class="text-sm text-text-dim">{p.summary}</p>
+              <p class=\"text-sm text-text-dim hover-highlight-base\">{p.summary}</p>
               <div class="flex justify-end">
-                <button type="button" class="rounded-full border border-black/50 px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-accent-alt hover:text-text-light" data-modal={`modal-proyecto-${p.slug}`}>
+                <button type="button" class="rounded-full border border-black/50 px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-accent-alt hover:text-text-light hover-highlight-base" data-modal={`modal-proyecto-${p.slug}`}>
                   Ver caso
                 </button>
               </div>
@@ -246,7 +246,7 @@ const prensa = [
               <span class="h-px flex-1 bg-accent-alt/60" aria-hidden="true" />
             </div>
             <h3 class="text-3xl font-semibold leading-tight text-white">{nota.title}</h3>
-            <p class="text-sm text-text-dim">{nota.summary}</p>
+            <p class="text-sm text-text-dim hover-highlight-base">{nota.summary}</p>
             <div class="flex justify-end">
               <button type="button" class="rounded-full border border-accent-alt/60 px-5 py-2 text-sm font-semibold text-accent-alt transition hover:bg-accent-alt hover:text-text-light" data-modal={`modal-reflexion-${nota.slug}`}>
                 Leer completa
@@ -284,9 +284,9 @@ const prensa = [
           </div>
           <div class="flex flex-1 flex-col gap-4 p-8">
             <h3 class="text-xl font-semibold text-text-light">{nota.title}</h3>
-            <p class="text-sm text-text-dim">{nota.summary}</p>
+            <p class="text-sm text-text-dim hover-highlight-base">{nota.summary}</p>
             <div class="mt-auto flex justify-end">
-              <a href={nota.url} target="_blank" rel="noopener" class="rounded-full border border-black/40 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent-alt hover:text-accent-alt">
+              <a href={nota.url} target="_blank" rel="noopener" class="rounded-full border border-black/40 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent-alt hover:text-accent-alt hover-highlight-base">
                 Nota completa
               </a>
             </div>
