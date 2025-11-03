@@ -83,12 +83,12 @@ const formacion = [
     </div>
   </section>
 
-  <section class="bg-accent-soft py-16">
+  <section class="bg-[#F0E8D9] py-16">
     <div class="mx-auto max-w-6xl px-6">
       <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">Experiencia clave</h2>
       <div class="mt-10 grid gap-6 md:grid-cols-2">
         {experiencia.map((item) => (
-          <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_24px_48px_rgba(0,0,0,0.12)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.16)]">
+          <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_24px_48px_rgba(0,0,0,0.12)]">
             <div class="flex items-start justify-between gap-4">
               <h3 class="text-xl font-heading tracking-[-0.015em] text-text-light">{item.rol}</h3>
               <span class="text-xs font-medium uppercase tracking-[0.25em] text-text-dim">{item.periodo}</span>
@@ -105,7 +105,7 @@ const formacion = [
     <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">Formación</h2>
     <div class="mt-8 grid gap-4 md:grid-cols-3">
       {formacion.map(({ titulo, institucion, anio }) => (
-        <div class="rounded-2xl border border-black/10 bg-bg-card p-6 shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_28px_56px_rgba(0,0,0,0.14)]">
+        <div class="rounded-2xl border border-black/10 bg-bg-card p-6 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
           <p class="text-xs font-medium uppercase tracking-[0.25em] text-text-dim">{anio}</p>
           <h3 class="mt-4 text-lg font-heading tracking-[-0.01em] text-text-light">{titulo}</h3>
           <p class="mt-2 text-sm text-text-dim">{institucion}</p>

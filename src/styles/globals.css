@@ -4,15 +4,12 @@
 
 :root {
   color-scheme: light;
-  --highlight-color: #f9e66b;
-  --text-light: #050505;
+  --highlight-color: #ffe36e;
 }
 
 html,
 body {
-  background: linear-gradient(180deg, #f1e6d6 0%, #f7f0e1 35%, #fdfbf6 100%);
-  color: var(--text-light);
-  min-height: 100vh;
+  @apply bg-bg-main text-text-light;
 }
 
 a {
@@ -49,7 +46,7 @@ a:hover {
 .hover-highlight-active {
   background-image: linear-gradient(120deg, var(--highlight-color) 0%, var(--highlight-color) 100%);
   background-size: 100% 35%;
-  color: var(--text-light);
+  color: #141414;
 }
 
 .app-modal {
@@ -57,8 +54,8 @@ a:hover {
   border-radius: 1.5rem;
   padding: 2rem clamp(1.5rem, 4vw, 3rem);
   max-width: min(720px, 90vw);
-  background: rgba(242, 232, 214, 0.95);
-  color: var(--text-light);
+  background: rgba(247, 244, 237, 0.95);
+  color: #141414;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
 }
 

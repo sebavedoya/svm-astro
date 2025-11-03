@@ -4,13 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'bg-main': '#F1E6D6',
+        'bg-main': '#F7F4ED',
         'bg-card': '#FFFFFF',
-        'text-light': '#050505',
-        'text-dim': '#3F3F3F',
-        'accent': '#050505',
-        'accent-alt': '#F9E66B',
-        'accent-soft': '#F5EDDD',
+        'text-light': '#141414',
+        'text-dim': '#555968',
+        'accent': '#141414',
+        'accent-alt': '#FFE873',
       },
       fontFamily: {
         heading: ['"Epilogue"', 'sans-serif'],
