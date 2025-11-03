@@ -2,48 +2,54 @@
 import Default from '../layouts/DefaultLayout.astro';
 import Hero from '../components/Hero.tsx';
 
-const experiences = [
+const trajectory = [
   {
-    href: 'https://www.latercera.com/',
-    label: 'La Tercera',
-    image: '/images/exp-la-tercera.png',
-    alt: 'Experiencia con La Tercera',
-  },
-  {
-    href: 'https://www.mineduc.cl/',
-    label: 'Ministerio de Educación',
-    image: '/images/exp-mineduc.png',
-    alt: 'Experiencia con Ministerio de Educación',
-  },
-  {
-    href: 'https://www.indap.gob.cl/',
-    label: 'INDAP',
+    organization: 'Instituto de Desarrollo Agropecuario (INDAP)',
+    role: 'Jefe de Comunicación Corporativa',
+    period: '2023 – Actualidad',
+    link: 'https://www.indap.gob.cl/',
     image: '/images/exp-indap.png',
-    alt: 'Experiencia con INDAP',
+    alt: 'INDAP',
   },
   {
-    href: 'https://www.cerronavia.cl/',
-    label: 'Municipalidad de Cerro Navia',
-    image: '/images/exp-cerro-navia.png',
-    alt: 'Experiencia con Municipalidad de Cerro Navia',
+    organization: 'Ministerio de Educación',
+    role: 'Coordinador de Comunicaciones',
+    period: '2021 – 2022',
+    link: 'https://www.mineduc.cl/',
+    image: '/images/exp-mineduc.png',
+    alt: 'Ministerio de Educación',
   },
   {
-    href: 'https://www.publimetro.cl/',
-    label: 'Publimetro',
-    image: '/images/exp-publimetro.png',
-    alt: 'Experiencia con Publimetro',
-  },
-  {
-    href: 'https://www.subtel.gob.cl/',
-    label: 'Subsecretaría de Telecomunicaciones',
+    organization: 'Subsecretaría de Telecomunicaciones',
+    role: 'Asesor Comunicacional',
+    period: '2018 – 2020',
+    link: 'https://www.subtel.gob.cl/',
     image: '/images/exp-subtel.png',
-    alt: 'Experiencia con Subsecretaría de Telecomunicaciones',
+    alt: 'Subsecretaría de Telecomunicaciones',
   },
   {
-    href: 'https://www.tvn.cl/',
-    label: 'Televisión Nacional de Chile',
-    image: '/images/exp-tvn.png',
-    alt: 'Experiencia con Televisión Nacional de Chile',
+    organization: 'Municipalidad de Cerro Navia',
+    role: 'Periodista Territorial',
+    period: '2016 – 2017',
+    link: 'https://www.cerronavia.cl/',
+    image: '/images/exp-cerro-navia.png',
+    alt: 'Municipalidad de Cerro Navia',
+  },
+  {
+    organization: 'La Tercera',
+    role: 'Periodista de Investigación',
+    period: '2014 – 2016',
+    link: 'https://www.latercera.com/',
+    image: '/images/exp-la-tercera.png',
+    alt: 'La Tercera',
+  },
+  {
+    organization: 'Publimetro · TVN',
+    role: 'Reportero y conductor de cobertura',
+    period: '2012 – 2014',
+    link: '',
+    image: '/images/exp-publimetro.png',
+    alt: 'Publimetro y TVN',
   },
 ];
 
@@ -176,18 +182,41 @@ const press = [
   <Hero client:load />
 
   <section id="experiencia" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-2xl font-heading border-b-2 border-accent inline-block mb-10">Experiencia</h2>
-    <div class="grid grid-cols-2 gap-6 text-text-dim sm:grid-cols-3 lg:grid-cols-4">
-      {experiences.map(({ href, label, image, alt }) => (
-        <a
-          class="group flex h-full w-full flex-col items-center justify-center gap-4 rounded-2xl border border-black/5 bg-bg-card p-6 text-center shadow-[0_12px_30px_rgba(20,20,20,0.08)] transition hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_18px_36px_rgba(20,20,20,0.12)]"
-          href={href}
-          rel="noopener"
-          target="_blank"
-        >
-          <img src={image} alt={alt} class="w-28 shrink-0 rounded-2xl border border-black/5 transition group-hover:border-accent/50" loading="lazy" />
-          <span class="text-sm font-semibold tracking-wide text-text-light group-hover:text-accent-alt">{label}</span>
-        </a>
+    <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Trayectoria</p>
+        <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">Roles clave al servicio de la comunicación pública</h2>
+        <p class="max-w-2xl text-sm text-text-dim">
+          Liderazgo en instituciones públicas, medios y territorios con equipos interdisciplinarios, diseño narrativo y despliegue integral.
+        </p>
+      </div>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {trajectory.map(({ organization, role, period, link, image, alt }) => (
+        <div class="group flex h-full flex-col gap-6 rounded-[2rem] border border-black/5 bg-gradient-to-br from-[#F8EFDD] via-[#F2E6D5] to-[#E9D7BE] p-8 shadow-[0_24px_48px_rgba(20,20,20,0.12)] transition hover:-translate-y-2 hover:shadow-[0_32px_64px_rgba(20,20,20,0.18)]">
+          <div class="flex items-start gap-5">
+            <div class="flex h-16 w-16 items-center justify-center rounded-2xl border border-black/10 bg-white shadow-[0_12px_24px_rgba(15,15,15,0.08)]">
+              <img src={image} alt={alt} class="max-h-10 w-auto" loading="lazy" />
+            </div>
+            <div class="space-y-2">
+              <p class="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-text-dim">{period}</p>
+              <h3 class="text-xl font-heading tracking-[-0.015em] text-text-light">{role}</h3>
+              <p class="text-sm text-text-dim">{organization}</p>
+            </div>
+          </div>
+          {link && (
+            <div class="flex justify-end">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 rounded-full border border-black/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-text-light transition hover:border-accent-alt hover:bg-white"
+              >
+                Ver organización <span>→</span>
+              </a>
+            </div>
+          )}
+        </div>
       ))}
     </div>
   </section>
