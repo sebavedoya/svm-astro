@@ -13,8 +13,8 @@ module.exports = {
         'accent-soft': '#F5EDDD',
       },
       fontFamily: {
-        heading: ['"Epilogue"', 'sans-serif'],
-        body: ['"DM Sans"', 'sans-serif'],
+        heading: ['"Space Grotesk"', 'sans-serif'],
+        body: ['"Work Sans"', 'sans-serif'],
         serif: ['"IBM Plex Serif"', 'serif'],
       },
     },

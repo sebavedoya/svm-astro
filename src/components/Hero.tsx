@@ -1,11 +1,6 @@
 import { motion } from 'framer-motion';
 
-const keywords = ['Estrategia', 'Audiencias', 'Datos', 'Narrativa'];
-
 export default function Hero() {
-  const buttonClass =
-    'inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-accent-alt hover:text-text-light shadow-[0_12px_24px_rgba(5,5,5,0.18)] hover:shadow-[0_18px_32px_rgba(5,5,5,0.22)]';
-
   return (
     <section className="flex h-[88vh] flex-col-reverse items-center justify-center gap-12 px-6 text-center md:flex-row md:text-left">
       <motion.div
@@ -14,46 +9,25 @@ export default function Hero() {
         transition={{ duration: 0.7 }}
         className="max-w-xl"
       >
-        <h1 className="text-5xl font-heading tracking-[-0.025em] leading-tight md:text-6xl">
-          <span className="block text-text-light">
-            <span className="rounded-full bg-text-light text-bg-main px-4 py-1">Sebastián Vedoya</span>
-          </span>
-          <span className="mt-3 block text-accent-alt">Comunicación estratégica</span>
+        <h1 className="text-5xl font-heading leading-tight md:text-6xl">
+          <span className="block text-text-light">Sebastián Vedoya</span>
+          <span className="block text-text-light">Comunicación estratégica</span>
         </h1>
-        <p className="text-text-dim mt-6 text-lg font-medium">
+        <p className="text-text-dim mt-6 text-lg">
           Periodista con más de 10 años de experiencia en medios y gobierno. Me dedico a buscar respuestas complejas para entornos
           complejos.
         </p>
-        <motion.div
-          className="mt-8 flex flex-wrap items-center gap-3"
-          initial="hidden"
-          animate="visible"
-          variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-        >
-          {keywords.map((word) => (
-            <motion.span
-              key={word}
-              className="rounded-full border border-black/10 bg-accent-alt/60 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-accent"
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0 },
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
-        </motion.div>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <motion.a
             href="/files/CV.pdf"
-            className={buttonClass}
+            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light"
             whileHover={{ scale: 1.04 }}
           >
             Descargar CV
           </motion.a>
           <a
             href="mailto:seba.vedoya@gmail.com"
-            className={buttonClass}
+            className="inline-flex items-center rounded-full bg-accent-alt px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-[#ffe24f]"
           >
             seba.vedoya@gmail.com
           </a>
@@ -61,7 +35,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/sebastianvedoyam/"
             target="_blank"
             rel="noopener"
-            className={buttonClass}
+            className="inline-flex items-center rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent hover:bg-white"
           >
             LinkedIn
           </a>

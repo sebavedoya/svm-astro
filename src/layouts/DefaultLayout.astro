@@ -11,12 +11,11 @@ const pageTitle = title ? `${title} · Sebastián Vedoya M.` : 'Sebastián Vedoy
 const pageUrl = new URL(Astro.url.pathname, 'https://svm-astro.vercel.app').toString();
 const ogImage = '/og.svg';
 const navLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/acerca', label: 'Acerca' },
-  { href: '/proyectos', label: 'Proyectos' },
-  { href: '/servicios', label: 'Servicios' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: '/#sistema', label: 'Sistema' },
+  { href: '/#proyectos', label: 'Proyectos' },
+  { href: '/#reflexiones', label: 'Reflexiones' },
+  { href: '/#prensa', label: 'Prensa' },
+  { href: '/#contacto', label: 'Contacto' },
 ];
 ---
 <!doctype html>
@@ -29,7 +28,7 @@ const navLinks = [
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Epilogue:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <meta name="color-scheme" content="light only" />
     <meta name="theme-color" content="#F6F2EA" />
@@ -73,8 +72,8 @@ const navLinks = [
   <body class="font-body">
     <header class="fixed top-0 left-0 z-50 w-full border-b border-black/5 bg-bg-main/80 px-6 py-4 backdrop-blur-md md:px-10">
       <div class="mx-auto flex max-w-6xl items-center justify-between">
-        <a href="/" class="font-heading text-lg tracking-[-0.02em] text-text-light transition hover:text-accent-alt">Sebastián Vedoya M.</a>
-        <nav class="hidden gap-6 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-text-dim md:flex">
+        <a href="/" class="font-heading text-lg tracking-wider text-text-light transition hover:text-accent-alt">Sebastián Vedoya M.</a>
+        <nav class="hidden gap-6 text-sm text-text-dim md:flex">
           {navLinks.map(({ href, label }) => (
             <a href={href} class="transition-colors hover:text-accent-alt">{label}</a>
           ))}
