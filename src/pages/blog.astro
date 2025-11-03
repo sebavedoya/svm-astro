@@ -1,0 +1,51 @@
+---
+import Default from '../layouts/DefaultLayout.astro';
+
+const posts = [
+  {
+    titulo: 'La Ley de la Variedad Requerida y su valor para diseñar estrategia comunicacional hoy',
+    resumen: 'Breve marco de Ashby para entornos hiperfragmentados y su uso en matrices de decisión.',
+  },
+  {
+    titulo: 'Crisis comunicacional en tiempos de hiperconexión: claves y errores frecuentes',
+    resumen: 'Principios de preparación, portavocía y control de daños con enfoque en aprendizaje continuo.',
+  },
+  {
+    titulo: 'Comunicar sin miedo',
+    resumen: 'Notas para simplificar procesos, estandarizar y sostener el tono institucional en escenarios tensos.',
+  },
+];
+---
+<Default title="Blog / Ideas / Lecturas">
+  <section class="mx-auto max-w-5xl px-6 pt-28 pb-16">
+    <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Ideas y lecturas</p>
+    <h1 class="mt-6 text-4xl md:text-[3rem] font-heading tracking-[-0.03em] text-text-light">
+      Análisis y herramientas para entender el presente comunicacional.
+    </h1>
+    <p class="mt-6 text-lg font-medium text-text-dim">
+      Ensayos y apuntes sobre estrategia, narrativas, datos y liderazgo público. Material en desarrollo para profundizar en los
+      marcos conceptuales que sostienen mi práctica profesional.
+    </p>
+  </section>
+
+  <section class="bg-[#141414] py-16">
+    <div class="mx-auto max-w-5xl grid gap-6 px-6 md:grid-cols-3">
+      {posts.map(({ titulo, resumen }) => (
+        <article class="rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur-sm">
+          <h2 class="text-xl font-heading tracking-[-0.015em] text-white">{titulo}</h2>
+          <p class="mt-3 text-sm text-white/75">{resumen}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-16 text-center">
+    <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">¿Quieres recibir nuevas ideas?</h2>
+    <p class="mt-4 text-lg font-medium text-text-dim">
+      Suscríbete al boletín –en construcción– para acceder a frameworks y análisis antes de que se publiquen.
+    </p>
+    <a href="/contacto" class="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light">
+      Escríbeme
+    </a>
+  </section>
+</Default>

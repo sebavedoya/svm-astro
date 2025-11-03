@@ -1,0 +1,58 @@
+---
+import Default from '../layouts/DefaultLayout.astro';
+
+const servicios = [
+  {
+    titulo: 'Estrategia de comunicación institucional',
+    descripcion:
+      'Planes completos, gestión de crisis, vocería y transformación digital con gobernanza de canales y métricas accionables.',
+  },
+  {
+    titulo: 'Diseño de narrativas y campañas',
+    descripcion:
+      'Mensajes dirigidos, enfoque territorial y voz institucional clara para medios tradicionales y digitales.',
+  },
+  {
+    titulo: 'Gestión de prensa y relaciones públicas',
+    descripcion: 'Vocerías, alianzas, manejo de crisis, medios sectoriales, pauta y seguimiento permanente.',
+  },
+  {
+    titulo: 'Formación y workshops',
+    descripcion:
+      'Programas a medida en comunicación interna, IA aplicada a contenidos, lectura de datos y entrenamiento de vocerías.',
+  },
+];
+---
+<Default title="Servicios">
+  <section class="mx-auto max-w-5xl px-6 pt-28 pb-16">
+    <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Servicios</p>
+    <h1 class="mt-6 text-4xl md:text-[3rem] font-heading tracking-[-0.03em] text-text-light">
+      Trabajo con organizaciones públicas, privadas e intermedias que necesitan comunicar con propósito, claridad y estrategia.
+    </h1>
+    <p class="mt-6 text-lg font-medium text-text-dim">
+      Enfoque diseñado para contextos de alta presión e impacto institucional. Cada servicio se adapta al posicionamiento y a la
+      gestión sistémica de audiencias.
+    </p>
+  </section>
+
+  <section class="bg-[#F0E8D9] py-16">
+    <div class="mx-auto max-w-6xl grid gap-8 px-6 md:grid-cols-2">
+      {servicios.map(({ titulo, descripcion }) => (
+        <article class="flex h-full flex-col gap-4 rounded-[2rem] border border-black/10 bg-white/90 p-8 shadow-[0_24px_48px_rgba(0,0,0,0.12)]">
+          <h2 class="text-2xl font-heading tracking-[-0.015em] text-text-light">{titulo}</h2>
+          <p class="text-sm font-medium text-text-dim">{descripcion}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-16 text-center">
+    <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">Revisemos juntos tu próximo proyecto</h2>
+    <p class="mt-4 text-lg font-medium text-text-dim">
+      Puedo sumarme como consultor táctico o liderar la dirección integral de la comunicación institucional.
+    </p>
+    <a href="/contacto" class="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light">
+      Agenda una reunión inicial
+    </a>
+  </section>
+</Default>

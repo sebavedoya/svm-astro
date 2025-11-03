@@ -1,0 +1,41 @@
+---
+import Default from '../layouts/DefaultLayout.astro';
+---
+<Default title="Contacto">
+  <section class="mx-auto max-w-3xl px-6 pt-28 pb-16 text-center">
+    <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Contacto</p>
+    <h1 class="mt-6 text-4xl font-heading tracking-[-0.03em] text-text-light">Conversemos</h1>
+    <p class="mt-4 text-lg font-medium text-text-dim">
+      ¿Buscas asesoría o servicios estratégicos en comunicación institucional? Estoy disponible para proyectos, consultoría y
+      formación de equipos. Escríbeme o agenda una reunión inicial.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 pb-16">
+    <form action="https://formspree.io/f/XXXXXXX" method="POST" class="space-y-6 rounded-3xl border border-black/10 bg-bg-card p-8 shadow-[0_26px_52px_rgba(0,0,0,0.12)]">
+      <label class="flex flex-col text-left text-sm font-medium text-text-light">
+        Nombre
+        <input type="text" name="nombre" required class="mt-2 rounded-xl border border-black/10 bg-white/80 px-4 py-3 text-text-light focus:border-accent focus:outline-none" />
+      </label>
+      <label class="flex flex-col text-left text-sm font-medium text-text-light">
+        Email
+        <input type="email" name="email" required class="mt-2 rounded-xl border border-black/10 bg-white/80 px-4 py-3 text-text-light focus:border-accent focus:outline-none" />
+      </label>
+      <label class="flex flex-col text-left text-sm font-medium text-text-light">
+        Mensaje
+        <textarea name="mensaje" rows="6" required class="mt-2 rounded-xl border border-black/10 bg-white/80 px-4 py-3 text-text-light focus:border-accent focus:outline-none"></textarea>
+      </label>
+      <button type="submit" class="w-full rounded-full bg-accent px-8 py-3 text-sm font-semibold text-white transition hover:bg-accent-alt hover:text-text-light">
+        Agenda una reunión inicial
+      </button>
+    </form>
+
+    <div class="mt-8 flex flex-col items-center gap-3 text-sm text-text-dim">
+      <p>
+        También puedes escribirme a <a href="mailto:correo@ejemplo.com" class="text-accent">correo@ejemplo.com</a> o contactarme en
+        <a href="https://www.linkedin.com/in/sebastianvedoyam/" target="_blank" rel="noopener" class="text-accent">LinkedIn</a>.
+      </p>
+      <a href="https://wa.me/56900000000" class="text-accent">Hablemos por WhatsApp →</a>
+    </div>
+  </section>
+</Default>

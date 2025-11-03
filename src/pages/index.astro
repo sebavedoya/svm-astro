@@ -2,351 +2,123 @@
 import Default from '../layouts/DefaultLayout.astro';
 import Hero from '../components/Hero.tsx';
 
-const experiencia = [
-  { name: 'La Tercera', url: 'https://www.latercera.com/', img: '/images/exp-la-tercera.png' },
-  { name: 'Ministerio de Educación', url: 'https://www.mineduc.cl/', img: '/images/exp-mineduc.png' },
-  { name: 'INDAP', url: 'https://www.indap.gob.cl/', img: '/images/exp-indap.png' },
-  { name: 'Municipalidad de Cerro Navia', url: 'https://www.cerronavia.cl/', img: '/images/exp-cerro-navia.png' },
-  { name: 'Publimetro', url: 'https://www.publimetro.cl/', img: '/images/exp-publimetro.png' },
-  { name: 'Subsecretaría de Telecomunicaciones', url: 'https://www.subtel.gob.cl/', img: '/images/exp-subtel.png' },
-  { name: 'Televisión Nacional de Chile', url: 'https://www.tvn.cl/', img: '/images/exp-tvn.png' },
-];
-
-const systemQuote = {
-  text: 'Ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede igualarlo, debe aprender a domesticarlo.',
-  author: 'Ross Ashby',
-};
-
-const proyectos = [
+const processSteps = [
   {
-    slug: 'operacion-topografo',
-    title: 'Operación Topógrafo',
-    category: 'Investigación',
-    img: '/images/topografo.jpg',
-    summary: 'Investigación que reveló espionaje militar a periodistas y denunciantes.',
-    detail: [
-      'Reportaje de investigación que reveló el espionaje de la Dirección de Inteligencia del Ejército a periodistas y funcionarios denunciantes.',
-      'La publicación marcó un antes y un después en la discusión sobre transparencia y control civil de las Fuerzas Armadas, con repercusiones judiciales y mediáticas que se mantienen hasta hoy.',
-    ],
+    titulo: 'Diagnóstico',
+    detalle: 'Audiencias, contexto, riesgos y oportunidades para definir las coordenadas estratégicas.',
   },
   {
-    slug: 'vocerias-y-despliegue',
-    title: 'Vocerías y despliegue',
-    category: 'Conducción estratégica',
-    img: '/images/vocerias.jpg',
-    summary: 'Fortalecimiento de vocerías y coherencia comunicacional en terreno.',
-    detail: [
-      'Diseño de lineamientos, preparación de portavoces, acompañamiento en terreno y estandarización de mensajes clave para un despliegue coherente en medios, regiones y redes.',
-    ],
+    titulo: 'Diseño',
+    detalle: 'Mensajes, narrativa, mix de canales y calendarización con gobernanza clara.',
   },
   {
-    slug: 'comunicacion-digital',
-    title: 'Comunicación digital',
-    category: 'Narrativa y medición',
-    img: '/images/digital.jpg',
-    summary: 'Estrategia y formatos nativos para alto rendimiento.',
-    detail: [
-      'Reorientación de equipos y parrillas a formatos nativos, workflows editoriales y medición de impacto para mejorar alcance, retención y reputación en plataformas sociales.',
-    ],
+    titulo: 'Ejecución',
+    detalle: 'Coordinación de equipos, piezas, prensa, RRSS y alianzas en despliegues 360°.',
+  },
+  {
+    titulo: 'Medición',
+    detalle: 'KPIs, aprendizajes y ajustes para iterar, escalar y estandarizar procesos.',
   },
 ];
 
-const reflexiones = [
+const quickLinks = [
   {
-    slug: 'la-ley-de-la-variedad-requerida',
-    title: 'La ley de la variedad requerida y el desafío comunicacional contemporáneo',
-    tag: 'Sistema',
-    summary: 'Ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede, debe domesticarlo.',
-    detail: [
-      'La ley de la variedad requerida, postulada por Ross Ashby en 1958, es una de las piedras angulares de la cibernética y una lección vigente para afrontar el entorno comunicativo actual. Según el psiquiatra inglés, un sistema solo puede sobrevivir y mantenerse estable si su capacidad de respuestas al menos iguala la complejidad de las perturbaciones que provienen del entorno.',
-      'En términos comunicacionales, ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede igualarlo, debe aprender a domesticarlo. Esto último es cada vez más difícil entendiendo la dificultad que existe por controlar la agenda pública.',
-      'Hoy la variedad inunda el entorno a través de innumerables canales, audiencias y especializaciones. Aplicando la enseñanza de Ashby, la ausencia o la pasividad no resuelve conflictos: exige que las estrategias planifiquen y conduzcan a través de múltiples canales y mensajes que contrarresten esa variedad.',
-    ],
+    href: '/acerca',
+    titulo: 'Acerca de mí',
+    texto: 'Conoce la trayectoria y la manera de trabajar con organizaciones públicas y privadas.',
   },
   {
-    slug: 'autoridades-y-redes-sociales',
-    title: 'Autoridades y redes sociales: una confusión frecuente',
-    tag: 'Gestión pública',
-    summary: 'Las redes institucionales no son un canal 24/7 para cronicar agendas personales.',
-    detail: [
-      'Pese a lo que muchas autoridades creen, las redes sociales institucional no son su canal de noticias 24/7 a su disposición. Registrar y publicar cada una de sus actividades públicas no solo distrae a los equipos de comunicaciones de lo realmente importante —gestión de prensa, comunicación interna o creación de contenido de valor—, sino que termina generando más bloqueos que los soñados “likes”.',
-      'Autoridades de distintos niveles replican este modelo: subsecretarías, seremis, delegaciones, servicios. Parecen clones de lo que no se debe hacer en redes sociales. Si ya existen fuertes resistencias hacia las instituciones estatales, malgastar la oportunidad que ofrece el entorno digital solo amplía esa distancia.',
-      'Liberen a sus equipos. Permítanles crear. Si una reunión no se publica, nadie la extrañará. Si logran comunicar los logros de gestión con simpatía y cercanía, construirán comunidad y obtendrán la visibilidad que buscan. No todo gira sobre ustedes.',
-    ],
+    href: '/proyectos',
+    titulo: 'Casos de estudio',
+    texto: 'Revisa proyectos con resultados concretos en posicionamiento, campañas y prensa.',
   },
   {
-    slug: 'comunicar-sin-miedo',
-    title: 'Comunicar sin miedo',
-    tag: 'Vocería',
-    summary: 'Preparación, confianza y escucha activa superan el temor a exponerse.',
-    detail: [
-      'Durante una visita a Rapa Nui tuve la oportunidad de entrevistar a la alcaldesa Elizabeth Arévalo Pakarati. Terminada la conversación, mi reacción fue inmediata: ya quisiera cualquier político o directivo de empresa su capacidad de comunicar. Todo funcionó perfecto. Su vestimenta, postura, tono y locuacidad demostraban un trabajo constante y dedicado.',
-      'Su ejemplo sirve para contrastar con el temor y la desconfianza con que muchas autoridades enfrentan la responsabilidad de comunicar. Cada vez son más quienes anteponen la precaución por sobre la oportunidad. El miedo al cuestionamiento, la contrapregunta, el tuit o la columna del día siguiente inmoviliza e impide aprovechar la posibilidad de conectar con públicos diversos.',
-      'La comunicación es el principal vehículo entre la comunidad y sus autoridades. Ignorarla, evadirla o subestimarla genera costos. Mejor seguir el ejemplo de la alcaldesa de Rapa Nui y asumirla con la seriedad y la confianza que merece.',
-    ],
+    href: '/servicios',
+    titulo: 'Servicios',
+    texto: 'Planes estratégicos, narrativas sectoriales, prensa y workshops para equipos.',
   },
 ];
 
-const prensa = [
+const blogPreview = [
   {
-    slug: 'topografo',
-    title: 'Operación Topógrafo — Espionaje del Ejército a denunciantes',
-    outlet: 'La Tercera',
-    img: '/images/topografo.jpg',
-    summary: 'Investigación que reveló el espionaje del Ejército a periodistas y denunciantes.',
-    url: 'https://www.latercera.com/reportajes/noticia/operacion-topografo-espionaje-del-ejercito-cuatro-denunciantes-irregularidades/777342/',
-    detail: [
-      'Reportaje que detalla las operaciones de inteligencia del Ejército contra periodistas y denunciantes que seguían la pista de irregularidades.',
-      'El trabajo periodístico forzó respuestas institucionales y abrió investigaciones judiciales por abuso de poder y vulneración de libertades civiles.',
-    ],
+    titulo: 'La Ley de la Variedad Requerida y su valor para diseñar estrategia comunicacional hoy',
+    resumen: 'Marco de Ashby aplicado a entornos hiperfragmentados y matrices de decisión.',
   },
   {
-    slug: 'lagos',
-    title: 'Ricardo Lagos: “Durante mi gobierno no privaticé nada, al contrario”',
-    outlet: 'Publimetro',
-    img: '/images/lagos.jpg',
-    summary: 'Entrevista al ex Presidente Ricardo Lagos sobre su legado económico y político.',
-    url: 'https://www.publimetro.cl/cl/noticias/2016/11/18/ex-presidente-lagos-durante-mi-gobierno-no-privatice-nada-contrario.html',
-    detail: [
-      'Un repaso por los principales hitos del gobierno de Ricardo Lagos y las críticas más recurrentes a su administración.',
-      'El ex Presidente profundiza en temas de privatización, rol del Estado y los desafíos que proyecta para Chile.',
-    ],
+    titulo: 'Crisis comunicacional en tiempos de hiperconexión: claves y errores frecuentes',
+    resumen: 'Principios de preparación, portavocía y control de daños con foco en aprendizaje continuo.',
   },
   {
-    slug: 'pinera',
-    title: 'Sebastián Piñera: “Me siento orgulloso de lo que he logrado en la vida”',
-    outlet: 'Publimetro',
-    img: '/images/pinera.jpg',
-    summary: 'Entrevista centrada en la trayectoria empresarial y política de Sebastián Piñera.',
-    url: 'https://www.publimetro.cl/cl/noticias/2017/06/19/sebastian-pinera-me-siento-orgulloso-lo-he-logrado-vida.html',
-    detail: [
-      'El ex Presidente repasa su historia empresarial, desafíos personales y motivaciones para volver a competir electoralmente.',
-      'Un diálogo que retrata la construcción de su liderazgo y la forma en que responde a las críticas públicas.',
-    ],
-  },
-  {
-    slug: 'larrain',
-    title: 'Hernán Larraín: “No somos partidarios de indultar a violadores de DD.HH. ni asesinos en serie”',
-    outlet: 'La Tercera',
-    img: '/images/larrain.jpg',
-    summary: 'Entrevista sobre justicia transicional, derechos humanos y políticas del Ministerio de Justicia.',
-    url: 'https://www.latercera.com/nacional/noticia/hernan-larrain-ministro-justicia-derechos-humanos-no-somos-partidarios-indultar-violadores-dd-hh-asesinos-serie/111533/',
-    detail: [
-      'El entonces ministro Hernán Larraín analiza la agenda legislativa y los desafíos para la reparación a víctimas de violaciones de derechos humanos.',
-      'Explica los criterios del gobierno frente a la posibilidad de indultos y cómo se articulan con compromisos internacionales.',
-    ],
-  },
-  {
-    slug: 'ramiro',
-    title: 'La declaración de ‘Ramiro’ ante Carroza',
-    outlet: 'La Tercera',
-    img: '/images/ramiro.jpg',
-    summary: 'Cobertura al testimonio de Mauricio Hernández Norambuena (Ramiro) ante el ministro Carroza.',
-    url: 'https://www.latercera.com/la-tercera-pm/noticia/la-declaracion-ramiro-carroza-estoy-seguro-estaba-privado-libertad-detencion-preventiva/792779/',
-    detail: [
-      'Reconstrucción del testimonio de Ramiro ante el ministro Mario Carroza, revisando su rol en el Frente Patriótico Manuel Rodríguez.',
-      'Análisis de las implicancias judiciales y políticas de la declaración en el contexto de causas de derechos humanos.',
-    ],
-  },
-  {
-    slug: 'papa',
-    title: "El Papa en La Araucanía: 'Mari Mari, peñi, lamngen'",
-    outlet: 'La Tercera',
-    img: '/images/papa.jpg',
-    summary: 'Cobertura especial de la visita del Papa Francisco a La Araucanía.',
-    url: 'https://www.latercera.com/noticia/papa-la-araucania-mari-mari/',
-    detail: [
-      'Crónica sobre la visita del Papa Francisco a Temuco y su encuentro con comunidades mapuche.',
-      'Se profundiza en el mensaje de diálogo, reconocimiento y reparación histórica entregado por el pontífice.',
-    ],
+    titulo: 'Comunicar sin miedo',
+    resumen: 'Notas para simplificar procesos y sostener el tono institucional en escenarios tensos.',
   },
 ];
 ---
 <Default title="Inicio">
   <Hero client:load />
-  <section id="experiencia" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-2xl font-heading tracking-[-0.01em] border-b-2 border-accent inline-block mb-10">Experiencia</h2>
-    <div class="grid grid-cols-2 gap-6 text-text-dim sm:grid-cols-3 lg:grid-cols-4">
-      {experiencia.map((e) => (
-        <a
-          class="group flex h-full w-full flex-col items-center justify-center gap-4 rounded-2xl border border-black/5 bg-bg-card p-6 text-center shadow-[0_12px_30px_rgba(20,20,20,0.08)] transition hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_18px_36px_rgba(20,20,20,0.12)]"
-          href={e.url}
-          rel="noopener"
-          target="_blank"
-        >
-          <img
-            src={e.img}
-            alt={`Experiencia con ${e.name}`}
-            class="w-28 shrink-0 rounded-2xl border border-black/5 transition group-hover:border-accent/50"
-            loading="lazy"
-          />
-          <span class="text-sm font-semibold tracking-wide text-text-light group-hover:text-accent-alt">{e.name}</span>
-        </a>
-      ))}
-    </div>
-  </section>
-  <section id="sistema" class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading tracking-[-0.015em] mb-6">Sistema</h2>
-    <blockquote class="rounded-2xl border border-black/5 bg-bg-card p-10 text-lg text-text-dim shadow-[0_16px_36px_rgba(20,20,20,0.08)]">
-      <p class="leading-relaxed text-text-light">{systemQuote.text}</p>
-      <span class="mt-4 block text-sm font-semibold text-text-dim">— {systemQuote.author}</span>
-    </blockquote>
-  </section>
-  <section id="proyectos" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading tracking-[-0.015em] mb-6">Proyectos</h2>
-    <p class="text-text-dim max-w-3xl text-lg font-medium mb-10">
-      Una selección de casos con impacto, contados en tarjetas con profundidad.
-    </p>
-    <div class="grid gap-10 md:grid-cols-3">
-      {proyectos.map((p) => (
-        <div class="contents">
-          <article class="group relative flex h-full flex-col gap-6 rounded-[2.5rem] bg-[#E8E1CF] p-8 shadow-[0_30px_60px_rgba(0,0,0,0.12)] transition hover:-translate-y-2 hover:shadow-[0_36px_72px_rgba(0,0,0,0.18)]">
-            <div class="relative overflow-hidden rounded-3xl">
-              <img src={p.img} alt={p.title} class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.04]" loading="lazy" />
-            </div>
-            <div class="space-y-4">
-              <p class="text-xs uppercase tracking-[0.35em] text-text-dim font-medium">{p.category}</p>
-              <h3 class="text-2xl font-heading font-semibold tracking-[-0.015em] leading-tight text-text-light">
-                <span class="title-highlight">{p.title}</span>
-              </h3>
-              <p class="text-sm font-medium text-text-dim hover-highlight-base">{p.summary}</p>
-              <div class="flex justify-end">
-                <button type="button" class="rounded-full border border-black/50 px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-accent-alt hover:text-text-light hover-highlight-base" data-modal={`modal-proyecto-${p.slug}`}>
-                  Ver caso
-                </button>
-              </div>
-            </div>
-          </article>
-          <dialog id={`modal-proyecto-${p.slug}`} class="app-modal">
-            <form method="dialog" class="flex justify-end">
-              <button class="rounded-full border border-black/40 px-4 py-1 text-sm uppercase tracking-wide text-text-dim transition hover:border-black hover:text-text-light">Cerrar</button>
-            </form>
-            <div class="space-y-4">
-              <p class="text-xs uppercase tracking-[0.3em] text-text-dim">{p.category}</p>
-              <h3 class="text-2xl font-semibold text-text-light">{p.title}</h3>
-              {p.detail.map((paragraph) => (
-                <p class="text-sm leading-relaxed text-text-dim">{paragraph}</p>
-              ))}
-            </div>
-          </dialog>
+
+  <section class="mx-auto mt-16 max-w-6xl px-6">
+    <div class="rounded-[2.5rem] border border-black/5 bg-[#F0E8D9] p-10 shadow-[0_26px_52px_rgba(0,0,0,0.12)]">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Proceso estratégico</p>
+          <h2 class="mt-4 text-3xl font-heading tracking-[-0.02em] text-text-light">
+            Diagnóstico → Diseño → Ejecución → Medición
+          </h2>
         </div>
-      ))}
-    </div>
-  </section>
-  <section id="reflexiones" class="max-w-5xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading tracking-[-0.015em] mb-6">Reflexiones</h2>
-    <p class="text-text-dim text-lg font-medium mb-10">Ensayos breves sobre estrategia, vocerías y comunicación pública.</p>
-    <div class="space-y-10">
-      {reflexiones.map((nota) => (
-        <div class="contents">
-          <article class="relative flex flex-col gap-5 rounded-[2rem] border border-black/10 bg-gradient-to-br from-[#10212B] via-[#142935] to-[#0B1A22] p-8 shadow-[0_35px_70px_rgba(0,0,0,0.45)] transition hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(0,0,0,0.55)]">
-            <div class="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.4em] text-accent-alt">
-              <span class="h-px flex-1 bg-accent-alt/60" aria-hidden="true" />
-              {nota.tag}
-              <span class="h-px flex-1 bg-accent-alt/60" aria-hidden="true" />
-            </div>
-            <h3 class="text-3xl font-heading tracking-[-0.02em] font-semibold leading-tight text-white">{nota.title}</h3>
-            <p class="text-sm font-medium text-text-dim hover-highlight-base">{nota.summary}</p>
-            <div class="flex justify-end">
-              <button type="button" class="rounded-full border border-accent-alt/60 px-5 py-2 text-sm font-semibold text-accent-alt transition hover:bg-accent-alt hover:text-text-light" data-modal={`modal-reflexion-${nota.slug}`}>
-                Leer completa
-              </button>
-            </div>
+        <p class="max-w-xl text-sm font-medium text-text-dim">
+          Cada fase combina análisis, narrativa y conducción de equipos para responder a contextos complejos. Los entregables están
+          diseñados para integrar datos, audiencias y posicionamiento institucional.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-4 md:grid-cols-4">
+        {processSteps.map(({ titulo, detalle }, index) => (
+          <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_16px_32px_rgba(0,0,0,0.08)]">
+            <p class="text-xs font-medium uppercase tracking-[0.3em] text-text-dim">Fase 0{index + 1}</p>
+            <h3 class="mt-4 text-lg font-heading tracking-[-0.01em] text-text-light">{titulo}</h3>
+            <p class="mt-3 text-sm text-text-dim">{detalle}</p>
           </article>
-          <dialog id={`modal-reflexion-${nota.slug}`} class="app-modal">
-            <form method="dialog" class="flex justify-end">
-              <button class="rounded-full border border-black/40 px-4 py-1 text-sm uppercase tracking-wide text-text-dim transition hover:border-black hover:text-text-light">Cerrar</button>
-            </form>
-            <div class="space-y-4">
-              <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-text-dim">
-                <span class="h-px flex-1 bg-black/20" aria-hidden="true" />
-                {nota.tag}
-                <span class="h-px flex-1 bg-black/20" aria-hidden="true" />
-              </div>
-              <h3 class="text-2xl font-heading tracking-[-0.02em] font-semibold text-text-light">{nota.title}</h3>
-              {nota.detail.map((paragraph) => (
-                <p class="text-sm leading-relaxed text-text-dim">{paragraph}</p>
-              ))}
-            </div>
-          </dialog>
-        </div>
-      ))}
-    </div>
-  </section>
-  <section id="prensa" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading tracking-[-0.015em] mb-6">Prensa</h2>
-    <div class="grid gap-8 lg:grid-cols-3">
-      {prensa.map((nota) => (
-        <article class="flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/10 bg-bg-card shadow-[0_28px_56px_rgba(0,0,0,0.18)] transition hover:-translate-y-2 hover:shadow-[0_34px_64px_rgba(0,0,0,0.24)]">
-          <div class="relative">
-            <img src={nota.img} alt={nota.title} class="h-48 w-full object-cover" loading="lazy" />
-            <span class="absolute bottom-4 right-4 rounded-full bg-black/80 px-4 py-1 text-xs uppercase tracking-[0.4em] text-accent-alt">{nota.outlet}</span>
-          </div>
-          <div class="flex flex-1 flex-col gap-4 p-8">
-            <h3 class="text-xl font-heading tracking-[-0.015em] font-semibold text-text-light">{nota.title}</h3>
-            <p class="text-sm font-medium text-text-dim hover-highlight-base">{nota.summary}</p>
-            <div class="mt-auto flex justify-end">
-              <a href={nota.url} target="_blank" rel="noopener" class="rounded-full border border-black/40 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent-alt hover:text-accent-alt hover-highlight-base">
-                Nota completa
-              </a>
-            </div>
-          </div>
-        </article>
-      ))}
-    </div>
-  </section>
-  <section id="contacto" class="max-w-3xl mx-auto px-6 py-16">
-    <div class="rounded-2xl border border-black/5 bg-bg-card px-8 py-12 text-center shadow-[0_20px_40px_rgba(20,20,20,0.08)]">
-      <h2 class="text-3xl font-heading mb-4">¿Conversamos?</h2>
-      <p class="text-text-dim">Escríbeme y revisa mi CV.</p>
-      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="mailto:seba.vedoya@gmail.com" class="inline-flex items-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light">
-          seba.vedoya@gmail.com
-        </a>
-        <a href="/files/CV.pdf" class="inline-flex items-center rounded-full border border-black/10 px-6 py-3 font-semibold text-text-light transition hover:border-accent hover:text-accent-alt">
-          Descargar CV
-        </a>
-        <a
-          href="https://www.linkedin.com/in/sebastianvedoyam/"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center rounded-full bg-accent-alt px-6 py-3 font-semibold text-text-light transition hover:bg-accent-alt/80"
-        >
-          LinkedIn
-        </a>
+        ))}
       </div>
     </div>
   </section>
-  <script is:inline>
-    const modalTriggers = document.querySelectorAll('[data-modal]');
-    const modals = document.querySelectorAll('.app-modal');
 
-    modalTriggers.forEach((trigger) => {
-      trigger.addEventListener('click', () => {
-        const id = trigger.getAttribute('data-modal');
-        const dialog = id ? document.getElementById(id) : null;
-        if (dialog && typeof dialog.showModal === 'function') {
-          dialog.showModal();
-        }
-      });
-    });
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <div class="grid gap-8 md:grid-cols-3">
+      {quickLinks.map(({ href, titulo, texto }) => (
+        <a href={href} class="group flex h-full flex-col gap-4 rounded-[2rem] border border-black/10 bg-bg-card p-8 shadow-[0_24px_48px_rgba(0,0,0,0.1)] transition hover:-translate-y-2 hover:shadow-[0_32px_64px_rgba(0,0,0,0.15)]">
+          <h3 class="text-2xl font-heading tracking-[-0.015em] text-text-light group-hover:text-accent">{titulo}</h3>
+          <p class="text-sm font-medium text-text-dim">{texto}</p>
+          <span class="mt-auto text-sm font-semibold text-accent">Explorar →</span>
+        </a>
+      ))}
+    </div>
+  </section>
 
-    modals.forEach((dialog) => {
-      dialog.addEventListener('click', (event) => {
-        const rect = dialog.getBoundingClientRect();
-        const outside =
-          event.clientX < rect.left ||
-          event.clientX > rect.right ||
-          event.clientY < rect.top ||
-          event.clientY > rect.bottom;
-        if (outside) {
-          dialog.close();
-        }
-      });
-      dialog.addEventListener('cancel', (event) => {
-        event.preventDefault();
-        dialog.close();
-      });
-    });
-  </script>
+  <section class="bg-[#141414] py-16">
+    <div class="mx-auto flex max-w-5xl flex-col gap-6 px-6 text-white">
+      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <h2 class="text-3xl font-heading tracking-[-0.02em]">Blog / Ideas / Lecturas</h2>
+        <a href="/blog" class="text-sm font-semibold text-accent-alt">Ver más ideas →</a>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {blogPreview.map(({ titulo, resumen }) => (
+          <article class="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
+            <h3 class="text-lg font-heading tracking-[-0.01em] text-white">{titulo}</h3>
+            <p class="mt-3 text-sm text-white/70">{resumen}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-16 text-center">
+    <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">¿Tienes un desafío comunicacional?</h2>
+    <p class="mt-4 text-lg font-medium text-text-dim">
+      Conversemos sobre cómo alinear estrategia, narrativa y datos para fortalecer tu institución.
+    </p>
+    <a href="/contacto" class="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light">
+      Contáctame
+    </a>
+  </section>
 </Default>
