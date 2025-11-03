@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 
 export default function Hero() {
+  const buttonClass =
+    'inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light';
+
   return (
     <section className="flex h-[88vh] flex-col-reverse items-center justify-center gap-12 px-6 text-center md:flex-row md:text-left">
       <motion.div
@@ -20,14 +23,14 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <motion.a
             href="/files/CV.pdf"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light"
+            className={buttonClass}
             whileHover={{ scale: 1.04 }}
           >
             Descargar CV
           </motion.a>
           <a
             href="mailto:seba.vedoya@gmail.com"
-            className="inline-flex items-center rounded-full bg-accent-alt px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-[#ffe24f]"
+            className={buttonClass}
           >
             seba.vedoya@gmail.com
           </a>
@@ -35,7 +38,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/sebastianvedoyam/"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent hover:bg-white"
+            className={buttonClass}
           >
             LinkedIn
           </a>
