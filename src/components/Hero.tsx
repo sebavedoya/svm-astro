@@ -10,13 +10,12 @@ export default function Hero() {
         className="max-w-xl"
       >
         <h1 className="text-5xl font-heading leading-tight md:text-6xl">
-          Sebastián Vedoya M.
-          <br />
-          <span className="text-accent-alt">Comunicación Estratégica</span>
+          <span className="text-text-light">Sebastián Vedoya M.</span>
+          <span className="ml-3 text-text-light">Comunicación Estratégica</span>
         </h1>
         <p className="text-text-dim mt-6 text-lg">
-          Estratega en comunicación con más de 10 años de experiencia en medios y gobierno. Me dedico a buscar respuestas
-          complejas para entornos complejos.
+          Periodista con más de 10 años de experiencia en medios y gobierno. Me dedico a buscar respuestas complejas para entornos
+          complejos.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <motion.a
