@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 
+const keywords = ['Estrategia', 'Audiencias', 'Datos', 'Narrativa'];
+
 export default function Hero() {
   const buttonClass =
-    'inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light';
+    'inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-accent-alt hover:text-text-light shadow-[0_12px_24px_rgba(5,5,5,0.18)] hover:shadow-[0_18px_32px_rgba(5,5,5,0.22)]';
 
   return (
     <section className="flex h-[88vh] flex-col-reverse items-center justify-center gap-12 px-6 text-center md:flex-row md:text-left">
@@ -22,6 +24,25 @@ export default function Hero() {
           Periodista con más de 10 años de experiencia en medios y gobierno. Me dedico a buscar respuestas complejas para entornos
           complejos.
         </p>
+        <motion.div
+          className="mt-8 flex flex-wrap items-center gap-3"
+          initial="hidden"
+          animate="visible"
+          variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
+        >
+          {keywords.map((word) => (
+            <motion.span
+              key={word}
+              className="rounded-full border border-black/10 bg-accent-alt/60 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-accent"
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.div>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <motion.a
             href="/files/CV.pdf"

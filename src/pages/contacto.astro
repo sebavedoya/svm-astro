@@ -31,11 +31,19 @@ import Default from '../layouts/DefaultLayout.astro';
     </form>
 
     <div class="mt-8 flex flex-col items-center gap-3 text-sm text-text-dim">
-      <p>
-        También puedes escribirme a <a href="mailto:correo@ejemplo.com" class="text-accent">correo@ejemplo.com</a> o contactarme en
-        <a href="https://www.linkedin.com/in/sebastianvedoyam/" target="_blank" rel="noopener" class="text-accent">LinkedIn</a>.
+      <p class="flex items-center gap-2">
+        <span aria-hidden="true">✉️</span>
+        <span>
+          También puedes escribirme a <a href="mailto:correo@ejemplo.com" class="text-accent">correo@ejemplo.com</a>
+        </span>
       </p>
-      <a href="https://wa.me/56900000000" class="text-accent">Hablemos por WhatsApp →</a>
+      <p class="flex items-center gap-2">
+        <span aria-hidden="true">🔗</span>
+        <a href="https://www.linkedin.com/in/sebastianvedoyam/" target="_blank" rel="noopener" class="text-accent">LinkedIn</a>
+      </p>
+      <a href="https://wa.me/56900000000" class="flex items-center gap-2 text-accent">
+        <span aria-hidden="true">💬</span> Hablemos por WhatsApp →
+      </a>
     </div>
   </section>
 </Default>

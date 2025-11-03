@@ -21,7 +21,8 @@ const blogPreview = [
   <Hero client:load />
 
   <section class="mx-auto max-w-5xl px-6 py-16">
-    <div class="space-y-6 rounded-[2.5rem] border border-black/5 bg-bg-card p-10 shadow-[0_26px_52px_rgba(0,0,0,0.12)]">
+    <div class="relative overflow-hidden space-y-6 rounded-[2.5rem] border border-black/5 bg-bg-card p-10 shadow-[0_26px_52px_rgba(0,0,0,0.12)]">
+      <span class="pointer-events-none absolute -top-10 -right-12 h-48 w-48 rounded-full bg-accent-alt/40 blur-3xl" aria-hidden="true" />
       <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Acerca de mí</p>
       <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">Periodista y estratega comunicacional</h2>
       <div class="space-y-4 text-sm text-text-dim">
@@ -67,20 +68,20 @@ const blogPreview = [
     </div>
   </section>
 
-  <section class="bg-[#F0E8D9] py-16">
+  <section class="bg-accent-soft py-16">
     <div class="mx-auto flex max-w-5xl flex-col gap-6 px-6">
       <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Casos de estudio</p>
       <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">Aplicación real, metodología y resultados</h2>
       <div class="grid gap-6 md:grid-cols-3">
-        <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
+        <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_28px_56px_rgba(0,0,0,0.16)]">
           <h3 class="text-xl font-heading tracking-[-0.015em] text-text-light">Expo Mundo Rural 2025 — INDAP</h3>
           <p class="mt-2 text-sm text-text-dim">Campaña 360° postpandemia con 30.000 asistentes y $400MM en ventas.</p>
         </article>
-        <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
+        <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_28px_56px_rgba(0,0,0,0.16)]">
           <h3 class="text-xl font-heading tracking-[-0.015em] text-text-light">Campaña de vacunación — Cerro Navia</h3>
           <p class="mt-2 text-sm text-text-dim">Mensajes segmentados y despliegue comunitario para elevar la cobertura.</p>
         </article>
-        <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
+        <article class="rounded-2xl border border-black/10 bg-white/90 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_28px_56px_rgba(0,0,0,0.16)]">
           <h3 class="text-xl font-heading tracking-[-0.015em] text-text-light">Reportajes nominados — La Tercera</h3>
           <p class="mt-2 text-sm text-text-dim">Investigación periodística reconocida por Premios de Excelencia y Fundación Superación de la Pobreza.</p>
         </article>
@@ -127,9 +128,12 @@ const blogPreview = [
       </div>
       <div class="grid gap-6 md:grid-cols-3">
         {blogPreview.map(({ titulo, resumen }) => (
-          <article class="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
+          <article class="group rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-2 hover:bg-white/15">
             <h3 class="text-lg font-heading tracking-[-0.01em] text-white">{titulo}</h3>
             <p class="mt-3 text-sm text-white/70">{resumen}</p>
+            <span class="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent-alt opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Leer más <span>→</span>
+            </span>
           </article>
         ))}
       </div>
