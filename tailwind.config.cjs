@@ -12,8 +12,8 @@ module.exports = {
         'accent-alt': '#FFE873',
       },
       fontFamily: {
-        heading: ['"Space Grotesk"', 'sans-serif'],
-        body: ['"Work Sans"', 'sans-serif'],
+        heading: ['"Epilogue"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
         serif: ['"IBM Plex Serif"', 'serif'],
       },
     },

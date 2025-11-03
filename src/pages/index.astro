@@ -165,7 +165,7 @@ const prensa = [
 <Default title="Inicio">
   <Hero client:load />
   <section id="experiencia" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-2xl font-heading border-b-2 border-accent inline-block mb-10">Experiencia</h2>
+    <h2 class="text-2xl font-heading tracking-[-0.01em] border-b-2 border-accent inline-block mb-10">Experiencia</h2>
     <div class="grid grid-cols-2 gap-6 text-text-dim sm:grid-cols-3 lg:grid-cols-4">
       {experiencia.map((e) => (
         <a
@@ -186,15 +186,15 @@ const prensa = [
     </div>
   </section>
   <section id="sistema" class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading mb-6">Sistema</h2>
+    <h2 class="text-3xl font-heading tracking-[-0.015em] mb-6">Sistema</h2>
     <blockquote class="rounded-2xl border border-black/5 bg-bg-card p-10 text-lg text-text-dim shadow-[0_16px_36px_rgba(20,20,20,0.08)]">
       <p class="leading-relaxed text-text-light">{systemQuote.text}</p>
       <span class="mt-4 block text-sm font-semibold text-text-dim">— {systemQuote.author}</span>
     </blockquote>
   </section>
   <section id="proyectos" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading mb-6">Proyectos</h2>
-    <p class="text-text-dim max-w-3xl mb-10">
+    <h2 class="text-3xl font-heading tracking-[-0.015em] mb-6">Proyectos</h2>
+    <p class="text-text-dim max-w-3xl text-lg font-medium mb-10">
       Una selección de casos con impacto, contados en tarjetas con profundidad.
     </p>
     <div class="grid gap-10 md:grid-cols-3">
@@ -205,11 +205,11 @@ const prensa = [
               <img src={p.img} alt={p.title} class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.04]" loading="lazy" />
             </div>
             <div class="space-y-4">
-              <p class="text-xs uppercase tracking-[0.3em] text-text-dim">{p.category}</p>
-              <h3 class="text-2xl font-semibold leading-tight text-text-light">
+              <p class="text-xs uppercase tracking-[0.35em] text-text-dim font-medium">{p.category}</p>
+              <h3 class="text-2xl font-heading font-semibold tracking-[-0.015em] leading-tight text-text-light">
                 <span class="title-highlight">{p.title}</span>
               </h3>
-              <p class=\"text-sm text-text-dim hover-highlight-base\">{p.summary}</p>
+              <p class="text-sm font-medium text-text-dim hover-highlight-base">{p.summary}</p>
               <div class="flex justify-end">
                 <button type="button" class="rounded-full border border-black/50 px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-accent-alt hover:text-text-light hover-highlight-base" data-modal={`modal-proyecto-${p.slug}`}>
                   Ver caso
@@ -234,19 +234,19 @@ const prensa = [
     </div>
   </section>
   <section id="reflexiones" class="max-w-5xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading mb-6">Reflexiones</h2>
-    <p class="text-text-dim mb-10">Ensayos breves sobre estrategia, vocerías y comunicación pública.</p>
+    <h2 class="text-3xl font-heading tracking-[-0.015em] mb-6">Reflexiones</h2>
+    <p class="text-text-dim text-lg font-medium mb-10">Ensayos breves sobre estrategia, vocerías y comunicación pública.</p>
     <div class="space-y-10">
       {reflexiones.map((nota) => (
         <div class="contents">
           <article class="relative flex flex-col gap-5 rounded-[2rem] border border-black/10 bg-gradient-to-br from-[#10212B] via-[#142935] to-[#0B1A22] p-8 shadow-[0_35px_70px_rgba(0,0,0,0.45)] transition hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(0,0,0,0.55)]">
-            <div class="flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-accent-alt">
+            <div class="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.4em] text-accent-alt">
               <span class="h-px flex-1 bg-accent-alt/60" aria-hidden="true" />
               {nota.tag}
               <span class="h-px flex-1 bg-accent-alt/60" aria-hidden="true" />
             </div>
-            <h3 class="text-3xl font-semibold leading-tight text-white">{nota.title}</h3>
-            <p class="text-sm text-text-dim hover-highlight-base">{nota.summary}</p>
+            <h3 class="text-3xl font-heading tracking-[-0.02em] font-semibold leading-tight text-white">{nota.title}</h3>
+            <p class="text-sm font-medium text-text-dim hover-highlight-base">{nota.summary}</p>
             <div class="flex justify-end">
               <button type="button" class="rounded-full border border-accent-alt/60 px-5 py-2 text-sm font-semibold text-accent-alt transition hover:bg-accent-alt hover:text-text-light" data-modal={`modal-reflexion-${nota.slug}`}>
                 Leer completa
@@ -258,12 +258,12 @@ const prensa = [
               <button class="rounded-full border border-black/40 px-4 py-1 text-sm uppercase tracking-wide text-text-dim transition hover:border-black hover:text-text-light">Cerrar</button>
             </form>
             <div class="space-y-4">
-              <div class="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-text-dim">
+              <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-text-dim">
                 <span class="h-px flex-1 bg-black/20" aria-hidden="true" />
                 {nota.tag}
                 <span class="h-px flex-1 bg-black/20" aria-hidden="true" />
               </div>
-              <h3 class="text-2xl font-semibold text-text-light">{nota.title}</h3>
+              <h3 class="text-2xl font-heading tracking-[-0.02em] font-semibold text-text-light">{nota.title}</h3>
               {nota.detail.map((paragraph) => (
                 <p class="text-sm leading-relaxed text-text-dim">{paragraph}</p>
               ))}
@@ -274,7 +274,7 @@ const prensa = [
     </div>
   </section>
   <section id="prensa" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading mb-6">Prensa</h2>
+    <h2 class="text-3xl font-heading tracking-[-0.015em] mb-6">Prensa</h2>
     <div class="grid gap-8 lg:grid-cols-3">
       {prensa.map((nota) => (
         <article class="flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/10 bg-bg-card shadow-[0_28px_56px_rgba(0,0,0,0.18)] transition hover:-translate-y-2 hover:shadow-[0_34px_64px_rgba(0,0,0,0.24)]">
@@ -283,8 +283,8 @@ const prensa = [
             <span class="absolute bottom-4 right-4 rounded-full bg-black/80 px-4 py-1 text-xs uppercase tracking-[0.4em] text-accent-alt">{nota.outlet}</span>
           </div>
           <div class="flex flex-1 flex-col gap-4 p-8">
-            <h3 class="text-xl font-semibold text-text-light">{nota.title}</h3>
-            <p class="text-sm text-text-dim hover-highlight-base">{nota.summary}</p>
+            <h3 class="text-xl font-heading tracking-[-0.015em] font-semibold text-text-light">{nota.title}</h3>
+            <p class="text-sm font-medium text-text-dim hover-highlight-base">{nota.summary}</p>
             <div class="mt-auto flex justify-end">
               <a href={nota.url} target="_blank" rel="noopener" class="rounded-full border border-black/40 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent-alt hover:text-accent-alt hover-highlight-base">
                 Nota completa

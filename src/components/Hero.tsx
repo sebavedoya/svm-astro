@@ -12,11 +12,11 @@ export default function Hero() {
         transition={{ duration: 0.7 }}
         className="max-w-xl"
       >
-        <h1 className="text-5xl font-heading leading-tight md:text-6xl">
+        <h1 className="text-5xl font-heading tracking-[-0.025em] leading-tight md:text-6xl">
           <span className="block text-text-light">Sebastián Vedoya</span>
           <span className="block text-text-light">Comunicación estratégica</span>
         </h1>
-        <p className="text-text-dim mt-6 text-lg">
+        <p className="text-text-dim mt-6 text-lg font-medium">
           Periodista con más de 10 años de experiencia en medios y gobierno. Me dedico a buscar respuestas complejas para entornos
           complejos.
         </p>
