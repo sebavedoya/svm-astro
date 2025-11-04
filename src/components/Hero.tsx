@@ -11,23 +11,25 @@ export default function Hero() {
       >
         <h1 className="text-5xl font-heading leading-tight md:text-6xl">
           <span className="block text-text-light">Sebastián Vedoya</span>
-          <span className="block text-text-light">Comunicación estratégica</span>
+          <span className="block text-text-light">
+            <span className="title-highlight">Comunicación estratégica</span>
+          </span>
         </h1>
         <p className="text-text-dim mt-6 text-lg">
-          Periodista con más de 10 años de experiencia en medios y gobierno. Me dedico a buscar respuestas complejas para entornos
+          Periodista con más de 10 años de experiencia en medios y gobierno. Me especializo en buscar respuestas complejas para entornos
           complejos.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <motion.a
             href="/files/CV.pdf"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light"
+            className="btn"
             whileHover={{ scale: 1.04 }}
           >
             Descargar CV
           </motion.a>
           <a
             href="mailto:seba.vedoya@gmail.com"
-            className="inline-flex items-center rounded-full bg-accent-alt px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-[#ffe24f]"
+            className="btn"
           >
             seba.vedoya@gmail.com
           </a>
@@ -35,7 +37,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/sebastianvedoyam/"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent hover:bg-white"
+            className="btn"
           >
             LinkedIn
           </a>

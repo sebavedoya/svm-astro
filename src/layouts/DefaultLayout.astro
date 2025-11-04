@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
+import '../styles/overrides.css';
 
 const {
   title,
@@ -13,7 +14,7 @@ const ogImage = '/og.svg';
 const navLinks = [
   { href: '/#sistema', label: 'Sistema' },
   { href: '/#proyectos', label: 'Proyectos' },
-  { href: '/#reflexiones', label: 'Reflexiones' },
+  { href: '/#reflexiones', label: 'Opinión' },
   { href: '/#prensa', label: 'Prensa' },
   { href: '/#contacto', label: 'Contacto' },
 ];
@@ -72,12 +73,8 @@ const navLinks = [
   <body class="font-body">
     <header class="fixed top-0 left-0 z-50 w-full border-b border-black/5 bg-bg-main/80 px-6 py-4 backdrop-blur-md md:px-10">
       <div class="mx-auto flex max-w-6xl items-center justify-between">
-        <a href="/" class="font-heading text-lg tracking-wider text-text-light transition hover:text-accent-alt">Sebastián Vedoya M.</a>
-        <nav class="hidden gap-6 text-sm text-text-dim md:flex">
-          {navLinks.map(({ href, label }) => (
-            <a href={href} class="transition-colors hover:text-accent-alt">{label}</a>
-          ))}
-        </nav>
+        <a href="/" class="font-heading text-lg font-bold tracking-[0.35em] uppercase text-black">SEBASTIÁN VEDOYA M.</a>
+        <a href="/#contacto" class="btn hidden md:inline-flex uppercase">CONTACTO</a>
       </div>
     </header>
     <main class="min-h-screen pt-24">

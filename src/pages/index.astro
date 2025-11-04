@@ -90,42 +90,53 @@ const projects = [
   },
 ];
 
-const reflexiones = [
-  {
-    id: 'la-ley-de-la-variedad-requerida',
-    title: 'La ley de la variedad requerida y el desafío comunicacional contemporáneo',
-    tag: 'Sistema',
-    summary:
-      'Ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede, debe domesticarlo.',
-    details: [
-      'La ley de la variedad requerida, postulada por Ross Ashby en 1958, es una de las piedras angulares de la cibernética y una lección vigente para afrontar el entorno comunicativo actual. Según el psiquiatra inglés, un sistema solo puede sobrevivir y mantenerse estable si su capacidad de respuestas al menos iguala la complejidad de las perturbaciones que provienen del entorno.',
-      'En términos comunicacionales, ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede igualarlo, debe aprender a domesticarlo. Esto último es cada vez más difícil entendiendo la dificultad que existe por controlar la agenda pública.',
-      'Hoy la variedad inunda el entorno a través de innumerables canales, audiencias y especializaciones. Aplicando la enseñanza de Ashby, la ausencia o la pasividad no resuelve conflictos: exige que las estrategias planifiquen y conduzcan a través de múltiples canales y mensajes que contrarresten esa variedad.',
-    ],
-  },
-  {
-    id: 'autoridades-y-redes-sociales',
-    title: 'Autoridades y redes sociales: una confusión frecuente',
-    tag: 'Gestión pública',
-    summary: 'Las redes institucionales no son un canal 24/7 para cronicar agendas personales.',
-    details: [
-      'Pese a lo que muchas autoridades creen, las redes sociales institucional no son su canal de noticias 24/7 a su disposición. Registrar y publicar cada una de sus actividades públicas no solo distrae a los equipos de comunicaciones de lo realmente importante —gestión de prensa, comunicación interna o creación de contenido de valor—, sino que termina generando más bloqueos que los soñados “likes”.',
-      'Autoridades de distintos niveles replican este modelo: subsecretarías, seremis, delegaciones, servicios. Parecen clones de lo que no se debe hacer en redes sociales. Si ya existen fuertes resistencias hacia las instituciones estatales, malgastar la oportunidad que ofrece el entorno digital solo amplía esa distancia.',
-      'Liberen a sus equipos. Permítanles crear. Si una reunión no se publica, nadie la extrañará. Si logran comunicar los logros de gestión con simpatía y cercanía, construirán comunidad y obtendrán la visibilidad que buscan. No todo gira sobre ustedes.',
-    ],
-  },
-  {
-    id: 'comunicar-sin-miedo',
-    title: 'Comunicar sin miedo',
-    tag: 'Vocería',
-    summary: 'Preparación, confianza y escucha activa superan el temor a exponerse.',
-    details: [
-      'Durante una visita a Rapa Nui tuve la oportunidad de entrevistar a la alcaldesa Elizabeth Arévalo Pakarati. Terminada la conversación, mi reacción fue inmediata: ya quisiera cualquier político o directivo de empresa su capacidad de comunicar. Todo funcionó perfecto. Su vestimenta, postura, tono y locuacidad demostraban un trabajo constante y dedicado.',
-      'Su ejemplo sirve para contrastar con el temor y la desconfianza con que muchas autoridades enfrentan la responsabilidad de comunicar. Cada vez son más quienes anteponen la precaución por sobre la oportunidad. El miedo al cuestionamiento, la contrapregunta, el tuit o la columna del día siguiente inmoviliza e impide aprovechar la posibilidad de conectar con públicos diversos.',
-      'La comunicación es el principal vehículo entre la comunidad y sus autoridades. Ignorarla, evadirla o subestimarla genera costos. Mejor seguir el ejemplo de la alcaldesa de Rapa Nui y asumirla con la seriedad y la confianza que merece.',
-    ],
-  },
-];
+const formatReflectionParagraph = (value: string) =>
+  value
+    .replace(/^>\s*/, '')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/`(.+?)`/g, '$1')
+    .trim();
+
+const reflectionEntries = await Astro.glob('./reflexiones/*.md');
+const reflectionSummaries: Record<string, string> = {
+  'la-ley-de-la-variedad-requerida':
+    'La ley de la variedad requerida, postulada por Ross Ashby en 1958, es una de las piedras angulares de la cibernética y una lección vigente para afrontar el entorno comunicativo actual. Según el psiquiatra inglés, un sistema solo puede sobrevivir y mantenerse estable si su capacidad de respuestas al menos iguala la complejidad de las perturbaciones que provienen del entorno.',
+  'comunicar-sin-miedo':
+    'Durante una visita a Rapa Nui tuve la oportunidad de entrevistar a la alcaldesa Elizabeth Arévalo Pakarati. Terminada la conversación, mi reacción fue inmediata: ya quisiera cualquier político o directivo de empresa su capacidad de comunicar, le dije. Todo funcionó perfecto. Su vestimenta, postura, tono y locuacidad —del latín loquax, “el que tiene facilidad de palabra”— demostraban un trabajo constante y dedicado. Lejos de parecer una imagen artificial, solo irradiaba seguridad en sí misma.',
+  'autoridades-y-redes-sociales':
+    'Pese a lo que muchas autoridades creen, las redes sociales institucionales no son su canal de noticias 24/7 a su disposición. Registrar y publicar cada una de sus actividades públicas no solo distrae a los equipos de comunicaciones de lo realmente importante —gestión de prensa, comunicación interna o creación de contenido de valor—, sino que termina generando más bloqueos que los soñados “likes”.',
+};
+
+const reflexiones = reflectionEntries
+  .map((entry) => {
+    const slugFromUrl = entry.url?.split('/').filter(Boolean).pop();
+    const slugFromFile = entry.file.substring(entry.file.lastIndexOf('/') + 1).replace(/\.md$/i, '');
+    const slug = slugFromUrl ?? slugFromFile ?? `reflexion-${Math.random().toString(36).slice(2, 8)}`;
+
+    const paragraphs = entry
+      .rawContent()
+      .split(/\r?\n\r?\n/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+      .map(formatReflectionParagraph);
+
+    const summary = reflectionSummaries[slug] ?? paragraphs[0] ?? '';
+    const content = [...paragraphs];
+
+    const rawOrder = entry.frontmatter?.order;
+    const order = typeof rawOrder === 'number' ? rawOrder : Number.NEGATIVE_INFINITY;
+
+    return {
+      id: slug,
+      title: entry.frontmatter?.title ?? slug,
+      summary,
+      content,
+      order,
+    };
+  })
+  .sort((a, b) => b.order - a.order)
+  .map(({ order, ...rest }) => rest);
 
 const press = [
   {
@@ -176,6 +187,46 @@ const press = [
     alt: "El Papa en La Araucanía: 'Mari Mari, peñi, lamngen'",
     summary: 'Cobertura especial de la visita del Papa Francisco a La Araucanía.',
   },
+  {
+    title: 'Llaitul: líderes mapuches llaman a la resistencia en funeral de Catrillanca',
+    outlet: 'La Tercera',
+    link: 'https://www.latercera.com/nacional/noticia/llaitul-lideres-mapuches-llaman-resistencia-funeral-catrillanca/406714/',
+    image: '/images/catrillanca.jpg',
+    alt: 'Llaitul llama a la resistencia en funeral de Camilo Catrillanca',
+    summary: 'Cobertura sobre el funeral de Camilo Catrillanca.',
+  },
+  {
+    title: 'Habla el juez de Rancagua Marcelo Vásquez',
+    outlet: 'La Tercera',
+    link: 'https://www.latercera.com/reportajes/noticia/habla-el-juez-de-rancagua-marcelo-vasquez-siento-decepcion-de-haber-impartido-un-tipo-de-justicia-que-hoy-se-me-niega/747167/',
+    image: '/images/vasquez.jpg',
+    alt: 'Juez Marcelo Vásquez: "Siento decepción de haber impartido un tipo de justicia que hoy se me niega"',
+    summary: 'Visión del juez Marcelo Vásquez sobre la crisis judicial en Rancagua.',
+  },
+  {
+    title: 'Eduardo Frei: “He sido víctima de un gran fraude”',
+    outlet: 'La Tercera',
+    link: 'https://www.latercera.com/politica/noticia/eduardo-frei-he-victima-gran-fraude/823635/',
+    image: '/images/frei.jpg',
+    alt: 'Eduardo Frei sobre el fraude que lo afectó',
+    summary: 'Crónica sobre conferencia de prensa de Eduardo Frei sobre la estafa que impactó a su familia.',
+  },
+  {
+    title: 'La Parinacota: balas y abandono',
+    outlet: 'La Tercera',
+    link: 'https://www.latercera.com/nacional/noticia/la-parinacota-balas-abandono/614633/',
+    image: '/images/parinacota.jpg',
+    alt: 'Reportaje La Parinacota: entre las balas y el abandono',
+    summary: 'Reportaje sobre el abandono y la violencia en la población ubicada en la comuna de Quilicura.',
+  },
+  {
+    title: 'Los múltiples contratos del médico de la Presidenta Bachelet',
+    outlet: 'Publimetro',
+    link: 'https://www.publimetro.cl/cl/noticias/2016/12/13/multiples-contratos-medico-presidenta-bachelet.html',
+    image: '/images/puccio.jpg',
+    alt: 'Investigación sobre los contratos del médico de Bachelet',
+    summary: 'Investigación periodística sobre los contratos del médico de la Presidenta Bachelet.',
+  },
 ];
 ---
 <Default title="Inicio">
@@ -196,9 +247,6 @@ const press = [
       <div class="space-y-3">
         <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Trayectoria</p>
         <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">Roles clave al servicio de la comunicación pública</h2>
-        <p class="max-w-2xl text-sm text-text-dim">
-          Liderazgo en instituciones públicas, medios y territorios con equipos interdisciplinarios, diseño narrativo y despliegue integral.
-        </p>
       </div>
     </div>
     <div class="mt-10 grid gap-6 md:grid-cols-2">
@@ -220,7 +268,7 @@ const press = [
                 href={link}
                 target="_blank"
                 rel="noopener"
-                class="inline-flex items-center gap-2 rounded-full border border-black/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-text-light transition hover:border-accent-alt hover:bg-white"
+                class="btn gap-2"
               >
                 Ver organización <span>→</span>
               </a>
@@ -244,13 +292,13 @@ const press = [
             <div class="space-y-4">
               <p class="text-xs uppercase tracking-[0.3em] text-text-dim">{category}</p>
               <h3 class="text-2xl font-semibold leading-tight text-text-light">
-                <span class="title-highlight">{title}</span>
+                <span class="title-highlight-hover">{title}</span>
               </h3>
               <p class="text-sm text-text-dim hover-highlight-base">{summary}</p>
               <div class="flex justify-end">
                 <button
                   type="button"
-                  class="rounded-full border border-black/50 px-5 py-2 text-sm font-semibold text-text-light transition hover:bg-accent-alt hover:text-text-light hover-highlight-base"
+                  class="btn"
                   data-modal={`modal-proyecto-${id}`}
                 >
                   Ver caso
@@ -260,7 +308,7 @@ const press = [
           </article>
           <dialog id={`modal-proyecto-${id}`} class="app-modal">
             <form method="dialog" class="flex justify-end">
-              <button class="rounded-full border border-black/40 px-4 py-1 text-sm uppercase tracking-wide text-text-dim transition hover:border-black hover:text-text-light">
+              <button class="btn">
                 Cerrar
               </button>
             </form>
@@ -277,46 +325,36 @@ const press = [
     </div>
   </section>
 
-  <section id="reflexiones" class="max-w-5xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading mb-6">Reflexiones</h2>
-    <p class="text-text-dim mb-10">Ensayos breves sobre estrategia, vocerías y comunicación pública.</p>
-    <div class="space-y-10">
-      {reflexiones.map(({ id, title, tag, summary, details }) => (
+  <section id="reflexiones" class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-heading mb-6">Opinión</h2>
+    <div class="grid gap-10 md:grid-cols-3">
+      {reflexiones.map(({ id, title, summary, content }) => (
         <div class="contents">
-          <article class="relative flex flex-col gap-5 rounded-[2rem] border border-black/10 bg-gradient-to-br from-[#10212B] via-[#142935] to-[#0B1A22] p-8 shadow-[0_35px_70px_rgba(0,0,0,0.45)] transition hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(0,0,0,0.55)]">
-            <div class="flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-accent-alt">
-              <span class="h-px flex-1 bg-accent-alt/60" aria-hidden="true" />
-              {tag}
-              <span class="h-px flex-1 bg-accent-alt/60" aria-hidden="true" />
+          <article class="reflection-card group relative flex h-full flex-col gap-5 rounded-[2rem] border border-black/10 bg-[#F5EDDD] p-8 shadow-[0_18px_36px_rgba(0,0,0,0.12)] transition hover:-translate-y-2">
+            <span class="reflection-line" aria-hidden="true" />
+            <h3 class="text-2xl font-semibold text-text-light">
+              <span class="title-highlight-hover">{title}</span>
+            </h3>
+            <div class="flex-1 space-y-3 text-sm text-text-dim">
+              <p class="reflection-summary">{summary}</p>
             </div>
-            <h3 class="text-3xl font-semibold leading-tight text-white">{title}</h3>
-            <p class="text-sm text-text-dim hover-highlight-base">{summary}</p>
-            <div class="flex justify-end">
-              <button
-                type="button"
-                class="rounded-full border border-accent-alt/60 px-5 py-2 text-sm font-semibold text-accent-alt transition hover:bg-accent-alt hover:text-text-light"
-                data-modal={`modal-reflexion-${id}`}
-              >
-                Leer completa
-              </button>
-            </div>
+            <button type="button" class="btn reflection-toggle mt-auto self-start" data-modal={`reflection-${id}`}>
+              Leer completa
+            </button>
           </article>
-          <dialog id={`modal-reflexion-${id}`} class="app-modal">
+          <dialog id={`reflection-${id}`} class="app-modal reflection-modal">
             <form method="dialog" class="flex justify-end">
-              <button class="rounded-full border border-black/40 px-4 py-1 text-sm uppercase tracking-wide text-text-dim transition hover:border-black hover:text-text-light">
-                Cerrar
-              </button>
+              <button class="btn">Cerrar</button>
             </form>
-            <div class="space-y-4">
-              <div class="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-text-dim">
-                <span class="h-px flex-1 bg-black/20" aria-hidden="true" />
-                {tag}
-                <span class="h-px flex-1 bg-black/20" aria-hidden="true" />
+            <div class="reflection-modal-content">
+              <span class="reflection-modal-ornament" aria-hidden="true" />
+              <div class="space-y-4">
+                <h3 class="text-2xl font-semibold text-text-light">{title}</h3>
+                <p class="text-xs uppercase tracking-[0.3em] text-text-dim">Por S. Vedoya</p>
+                {content.map((paragraph) => (
+                  <p class="text-sm leading-relaxed text-text-dim">{paragraph}</p>
+                ))}
               </div>
-              <h3 class="text-2xl font-semibold text-text-light">{title}</h3>
-              {details.map((paragraph) => (
-                <p class="text-sm leading-relaxed text-text-dim">{paragraph}</p>
-              ))}
             </div>
           </dialog>
         </div>
@@ -327,21 +365,23 @@ const press = [
   <section id="prensa" class="max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Prensa</h2>
     <div class="grid gap-8 lg:grid-cols-3">
-      {press.map(({ title, outlet, link, image, alt, summary }) => (
-        <article class="flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/10 bg-bg-card shadow-[0_28px_56px_rgba(0,0,0,0.18)] transition hover:-translate-y-2 hover:shadow-[0_34px_64px_rgba(0,0,0,0.24)]">
+      {press.map(({ title, outlet, link, image, alt, summary }, index) => (
+        <article class={`press-card flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/10 bg-bg-card shadow-[0_28px_56px_rgba(0,0,0,0.18)] transition hover:-translate-y-2 hover:shadow-[0_34px_64px_rgba(0,0,0,0.24)] ${index > 2 ? 'hidden' : ''}`}>
           <div class="relative">
             <img src={image} alt={alt} class="h-48 w-full object-cover" loading="lazy" />
             <span class="absolute bottom-4 right-4 rounded-full bg-black/80 px-4 py-1 text-xs uppercase tracking-[0.4em] text-accent-alt">{outlet}</span>
           </div>
           <div class="flex flex-1 flex-col gap-4 p-8">
-            <h3 class="text-xl font-semibold text-text-light">{title}</h3>
-            <p class="text-sm text-text-dim hover-highlight-base">{summary}</p>
+            <h3 class="text-xl font-semibold text-text-light">
+              <span class="title-highlight-hover">{title}</span>
+            </h3>
+            <p class="text-sm text-text-dim">{summary}</p>
             <div class="mt-auto flex justify-end">
               <a
                 href={link}
                 target="_blank"
                 rel="noopener"
-                class="rounded-full border border-black/40 px-5 py-2 text-sm font-semibold text-text-light transition hover:border-accent-alt hover:text-accent-alt hover-highlight-base"
+                class="btn"
               >
                 Nota completa
               </a>
@@ -350,6 +390,9 @@ const press = [
         </article>
       ))}
     </div>
+    <div class="mt-8 flex justify-center">
+      <button id="press-toggle" class="btn">Ver más</button>
+    </div>
   </section>
 
   <section id="contacto" class="max-w-3xl mx-auto px-6 py-16">
@@ -357,17 +400,17 @@ const press = [
       <h2 class="text-3xl font-heading mb-4">¿Conversamos?</h2>
       <p class="text-text-dim">Escríbeme y revisa mi CV.</p>
       <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="mailto:seba.vedoya@gmail.com" class="inline-flex items-center rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-accent-alt hover:text-text-light">
+        <a href="mailto:seba.vedoya@gmail.com" class="btn normal-case tracking-[0.1em]">
           seba.vedoya@gmail.com
         </a>
-        <a href="/files/CV.pdf" class="inline-flex items-center rounded-full border border-black/10 px-6 py-3 font-semibold text-text-light transition hover:border-accent hover:text-accent-alt">
+        <a href="/files/CV.pdf" class="btn">
           Descargar CV
         </a>
         <a
           href="https://www.linkedin.com/in/sebastianvedoyam/"
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center rounded-full bg-accent-alt px-6 py-3 font-semibold text-text-light transition hover:bg-accent-alt/80"
+          class="btn"
         >
           LinkedIn
         </a>
@@ -406,6 +449,36 @@ const press = [
       dialog.addEventListener('cancel', (event) => {
         event.preventDefault();
         dialog.close();
+      });
+    });
+
+    const pressToggle = document.getElementById('press-toggle');
+    const pressCards = document.querySelectorAll('.press-card');
+    let pressExpanded = false;
+
+    if (pressToggle) {
+      pressToggle.addEventListener('click', () => {
+        pressExpanded = !pressExpanded;
+        pressCards.forEach((card, index) => {
+          if (index > 2) {
+            card.classList.toggle('hidden', !pressExpanded);
+          }
+        });
+        pressToggle.textContent = pressExpanded ? 'Ver menos' : 'Ver más';
+      });
+    }
+
+    const reflectionToggles = document.querySelectorAll('.reflection-toggle');
+    reflectionToggles.forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        const card = toggle.closest('.reflection-card');
+        const details = card?.querySelector('.reflection-details');
+        if (!card || !details) {
+          return;
+        }
+
+        const isHidden = details.classList.toggle('hidden');
+        toggle.textContent = isHidden ? 'Ver más' : 'Ver menos';
       });
     });
   </script>
