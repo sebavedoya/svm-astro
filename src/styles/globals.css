@@ -15,6 +15,30 @@ body {
   min-height: 100vh;
 }
 
+.systems-quote {
+  padding: clamp(2.5rem, 6vw, 5rem);
+  color: #050505;
+  background: transparent;
+}
+
+.systems-quote-text {
+  display: inline-block;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  min-height: 6.5rem;
+}
+
+.systems-quote-author {
+  margin-top: 1.75rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  text-align: right;
+  color: rgba(5, 5, 5, 0.75);
+}
+
 a {
   position: relative;
   color: inherit;
@@ -64,4 +88,27 @@ a:hover {
 
 .app-modal::backdrop {
   background: rgba(10, 10, 10, 0.7);
+}
+.systems-typewriter {
+  display: inline;
+}
+
+.systems-typewriter::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  margin-left: 0.15rem;
+  background: #050505;
+  animation: systems-caret 0.8s steps(1) infinite;
+  vertical-align: bottom;
+}
+
+@keyframes systems-caret {
+  0%, 70%, 100% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
 }

@@ -14,7 +14,7 @@ const trajectory = [
   {
     organization: 'Ministerio de Educación',
     role: 'Coordinador de Comunicaciones',
-    period: '2021 – 2022',
+    period: '2022 – 2023',
     link: 'https://www.mineduc.cl/',
     image: '/images/exp-mineduc.png',
     alt: 'Ministerio de Educación',
@@ -22,73 +22,101 @@ const trajectory = [
   {
     organization: 'Subsecretaría de Telecomunicaciones',
     role: 'Asesor Comunicacional',
-    period: '2018 – 2020',
+    period: '2021 – 2022',
     link: 'https://www.subtel.gob.cl/',
     image: '/images/exp-subtel.png',
     alt: 'Subsecretaría de Telecomunicaciones',
   },
   {
     organization: 'Municipalidad de Cerro Navia',
-    role: 'Periodista Territorial',
-    period: '2016 – 2017',
+    role: 'Asesor Comunicacional',
+    period: '2021',
     link: 'https://www.cerronavia.cl/',
     image: '/images/exp-cerro-navia.png',
     alt: 'Municipalidad de Cerro Navia',
   },
   {
-    organization: 'La Tercera',
-    role: 'Periodista de Investigación',
-    period: '2014 – 2016',
+    organization: "TVN Red O'Higgins",
+    role: 'Periodista',
+    period: '2021',
+    link: 'https://www.tvn.cl',
+    image: '/images/exp-tvn.png',
+    alt: "TVN Red O'Higgins",
+  },
+  {
+    organization: 'Diario La Tercera',
+    role: 'Periodista',
+    period: '2017 – 2020',
     link: 'https://www.latercera.com/',
     image: '/images/exp-la-tercera.png',
     alt: 'La Tercera',
   },
   {
-    organization: 'Publimetro · TVN',
-    role: 'Reportero y conductor de cobertura',
-    period: '2012 – 2014',
-    link: '',
+    organization: 'Publimetro',
+    role: 'Periodista',
+    period: '2015 – 2017',
+    link: 'https://www.publimetro.cl/',
     image: '/images/exp-publimetro.png',
-    alt: 'Publimetro y TVN',
+    alt: 'Publimetro',
+  },
+  {
+    organization: 'Servicio Agrícola y Ganadero (SAG) Región de Aysén',
+    role: 'Encargado de Comunicaciones',
+    period: '2013 – 2015',
+    link: 'https://www.sag.gob.cl',
+    image: '/images/exp-indap.png',
+    alt: 'SAG Región de Aysén',
+  },
+  {
+    organization: 'Radio Santa María de Coyhaique',
+    role: 'Periodista',
+    period: '2014 – 2015',
+    link: 'https://www.radiosantamaria.cl/',
+    image: '/images/exp-radio-santamaria.png',
+    alt: 'Radio Santa María de Coyhaique',
+  },
+  {
+    organization: 'Televisión Nacional de Chile',
+    role: 'Periodista en práctica',
+    period: '2013',
+    link: 'https://www.tvn.cl',
+    image: '/images/exp-tvn.png',
+    alt: 'Televisión Nacional de Chile',
   },
 ];
 
 const projects = [
   {
     id: 'operacion-topografo',
-    title: 'Operación Topógrafo',
-    category: 'Investigación',
-    image: '/images/topografo.jpg',
+    title: 'Investigación periodística sobre espionaje militar',
+    image: '/images/proyecto-topografo.jpg',
     alt: 'Operación Topógrafo',
-    summary: 'Investigación que reveló espionaje militar a periodistas y denunciantes.',
-    details: [
-      'Reportaje de investigación que reveló el espionaje de la Dirección de Inteligencia del Ejército a periodistas y funcionarios denunciantes.',
-      'La publicación marcó un antes y un después en la discusión sobre transparencia y control civil de las Fuerzas Armadas, con repercusiones judiciales y mediáticas que se mantienen hasta hoy.',
-    ],
+    summary:
+      'Operación Topógrafo reveló el espionaje ilegal de la Dirección de Inteligencia del Ejército de Chile a periodistas y funcionarios denunciantes. La publicación marcó un antes y un después en la discusión sobre transparencia y control civil de las Fuerzas Armadas, con repercusiones judiciales y mediáticas que se mantienen hasta hoy.',
+    link: 'https://www.latercera.com/reportajes/noticia/operacion-topografo-espionaje-del-ejercito-cuatro-denunciantes-irregularidades/777342/',
   },
   {
     id: 'vocerias-y-despliegue',
-    title: 'Vocerías y despliegue',
-    category: 'Conducción estratégica',
+    title: 'Vocerías y despliegue nacional',
     image: '/images/vocerias.jpg',
     alt: 'Vocerías y despliegue',
-    summary: 'Fortalecimiento de vocerías y coherencia comunicacional en terreno.',
-    details: [
-      'Diseño de lineamientos, preparación de portavoces, acompañamiento en terreno y estandarización de mensajes clave para un despliegue coherente en medios, regiones y redes.',
-    ],
+    summary:
+      'He recorrido las 16 regiones del país, tanto en territorio continental como insular, asesorando a autoridades de distintos gobiernos. Me especializo en fortalecer las vocerías, orientar ante crisis y consolidar la coherencia comunicacional entre diferentes niveles.',
+    link: '',
   },
   {
     id: 'comunicacion-digital',
-    title: 'Comunicación digital',
-    category: 'Narrativa y medición',
+    title: 'Comunicación digital adaptada al estilo de redes sociales',
     image: '/images/digital.jpg',
     alt: 'Comunicación digital',
-    summary: 'Estrategia y formatos nativos para alto rendimiento.',
-    details: [
-      'Reorientación de equipos y parrillas a formatos nativos, workflows editoriales y medición de impacto para mejorar alcance, retención y reputación en plataformas sociales.',
-    ],
+    summary:
+      'He reorientado las comunicaciones digitales institucionales desde un enfoque formal hacia un lenguaje adaptado al estilo propio de las redes sociales, capaz de visibilizar los logros de la administración y simultáneamente conectar con públicos diversos. La conducción hacia este enfoque permitió a la cuenta de INDAP aumentar en 81% el número total de seguidores en dos años.',
+    link: '',
   },
 ];
+
+const projectsPayload = JSON.stringify(projects).replace(/</g, '\\u003c');
+const defaultProject = projects[0];
 
 const formatReflectionParagraph = (value: string) =>
   value
@@ -233,13 +261,12 @@ const press = [
   <Hero client:load />
 
   <section class="max-w-4xl mx-auto px-6 py-16">
-    <blockquote class="relative overflow-hidden rounded-[2.5rem] border border-black/10 bg-gradient-to-br from-[#0E1B26] via-[#122332] to-[#0B161F] p-12 text-lg text-white shadow-[0_32px_64px_rgba(0,0,0,0.45)]">
-      <span class="pointer-events-none absolute -top-24 -right-16 h-64 w-64 rounded-full bg-accent-alt/30 blur-3xl" aria-hidden="true" />
-      <p class="text-3xl font-heading leading-snug tracking-[-0.02em]">
-        “Ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede igualarlo, debe aprender a domesticarlo.”
+    <div class="systems-quote">
+      <p class="systems-quote-text font-heading tracking-[-0.02em]" data-systems-quote>
+        <span class="systems-typewriter" data-systems-typewriter></span>
       </p>
-      <span class="mt-6 block text-sm font-semibold uppercase tracking-[0.3em] text-accent-alt">Ross Ashby</span>
-    </blockquote>
+      <p class="systems-quote-author">W. Ross Ashby</p>
+    </div>
   </section>
 
   <section id="experiencia" class="max-w-6xl mx-auto px-6 py-16">
@@ -250,8 +277,11 @@ const press = [
       </div>
     </div>
     <div class="mt-10 grid gap-6 md:grid-cols-2">
-      {trajectory.map(({ organization, role, period, link, image, alt }) => (
-        <div class="group flex h-full flex-col gap-6 rounded-[2rem] border border-black/5 bg-gradient-to-br from-[#F8EFDD] via-[#F2E6D5] to-[#E9D7BE] p-8 shadow-[0_24px_48px_rgba(20,20,20,0.12)] transition hover:-translate-y-2 hover:shadow-[0_32px_64px_rgba(20,20,20,0.18)]">
+      {trajectory.map(({ organization, role, period, link, image, alt }, index) => (
+        <div
+          class={`group flex h-full flex-col gap-6 rounded-[2rem] border border-black/5 bg-gradient-to-br from-[#F8EFDD] via-[#F2E6D5] to-[#E9D7BE] p-8 shadow-[0_24px_48px_rgba(20,20,20,0.12)] transition hover:-translate-y-2 hover:shadow-[0_32px_64px_rgba(20,20,20,0.18)] ${index >= 6 ? 'trajectory-extra hidden' : ''}`}
+          data-trajectory-extra={index >= 6 ? 'true' : undefined}
+        >
           <div class="flex items-start gap-5">
             <div class="flex h-16 w-16 items-center justify-center rounded-2xl border border-black/10 bg-white shadow-[0_12px_24px_rgba(15,15,15,0.08)]">
               <img src={image} alt={alt} class="max-h-10 w-auto" loading="lazy" />
@@ -277,71 +307,65 @@ const press = [
         </div>
       ))}
     </div>
+    {trajectory.length > 6 && (
+      <div class="mt-10 flex justify-center">
+        <button id="trajectory-toggle" class="btn">Ver más</button>
+      </div>
+    )}
   </section>
 
-  <section id="proyectos" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-heading mb-6">Proyectos</h2>
-    <p class="text-text-dim max-w-3xl mb-10">Una selección de casos con impacto, contados en tarjetas con profundidad.</p>
-    <div class="grid gap-10 md:grid-cols-3">
-      {projects.map(({ id, title, category, image, alt, summary, details }) => (
-        <div class="contents">
-          <article class="group relative flex h-full flex-col gap-6 rounded-[2.5rem] bg-[#E8E1CF] p-8 shadow-[0_30px_60px_rgba(0,0,0,0.12)] transition hover:-translate-y-2 hover:shadow-[0_36px_72px_rgba(0,0,0,0.18)]">
-            <div class="relative overflow-hidden rounded-3xl">
-              <img src={image} alt={alt} class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.04]" loading="lazy" />
-            </div>
-            <div class="space-y-4">
-              <p class="text-xs uppercase tracking-[0.3em] text-text-dim">{category}</p>
-              <h3 class="text-2xl font-semibold leading-tight text-text-light">
-                <span class="title-highlight-hover">{title}</span>
-              </h3>
-              <p class="text-sm text-text-dim hover-highlight-base">{summary}</p>
-              <div class="flex justify-end">
-                <button
-                  type="button"
-                  class="btn"
-                  data-modal={`modal-proyecto-${id}`}
-                >
-                  Ver caso
-                </button>
-              </div>
-            </div>
-          </article>
-          <dialog id={`modal-proyecto-${id}`} class="app-modal">
-            <form method="dialog" class="flex justify-end">
-              <button class="btn">
-                Cerrar
-              </button>
-            </form>
-            <div class="space-y-4">
-              <p class="text-xs uppercase tracking-[0.3em] text-text-dim">{category}</p>
-              <h3 class="text-2xl font-semibold text-text-light">{title}</h3>
-              {details.map((paragraph) => (
-                <p class="text-sm leading-relaxed text-text-dim">{paragraph}</p>
-              ))}
-            </div>
-          </dialog>
+  <section id="proyectos" class="project-section relative">
+    <div class="project-shell" style={`--project-count: ${projects.length}`}>
+      <div class="project-sticky" data-active-project={defaultProject?.id}>
+        <div class="project-slider" aria-hidden="true">
+          {projects.map(({ image, alt }) => (
+            <div class="project-slide" style={`background-image:url(${image})`} role="img" aria-label={alt ?? ''}></div>
+          ))}
         </div>
-      ))}
+        <div class="project-gradient" aria-hidden="true"></div>
+        <div class="project-copy" data-project-copy>
+          <h3 id="project-copy-title" class="project-title">
+            <span class="title-highlight-hover">{defaultProject?.title}</span>
+          </h3>
+          <p id="project-copy-summary" class="project-summary">{defaultProject?.summary}</p>
+          {defaultProject?.link && (
+            <div class="project-actions">
+              <a href={defaultProject.link} target="_blank" rel="noopener" class="btn">
+                Ver reportaje
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+      <div class="project-scroll">
+        <div class="project-scroll-inner">
+          {projects.map(({ title }, index) => (
+            <article class="project-trigger" data-index={index} aria-label={title}></article>
+          ))}
+        </div>
+      </div>
     </div>
+
+    <script type="application/json" id="projects-data" set:html={projectsPayload} />
   </section>
 
   <section id="reflexiones" class="max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Opinión</h2>
-    <div class="grid gap-10 md:grid-cols-3">
-      {reflexiones.map(({ id, title, summary, content }) => (
-        <div class="contents">
-          <article class="reflection-card group relative flex h-full flex-col gap-5 rounded-[2rem] border border-black/10 bg-[#F5EDDD] p-8 shadow-[0_18px_36px_rgba(0,0,0,0.12)] transition hover:-translate-y-2">
-            <span class="reflection-line" aria-hidden="true" />
-            <h3 class="text-2xl font-semibold text-text-light">
-              <span class="title-highlight-hover">{title}</span>
-            </h3>
-            <div class="flex-1 space-y-3 text-sm text-text-dim">
-              <p class="reflection-summary">{summary}</p>
-            </div>
-            <button type="button" class="btn reflection-toggle mt-auto self-start" data-modal={`reflection-${id}`}>
-              Leer completa
-            </button>
-          </article>
+    <div class="grid gap-16 md:grid-cols-3">
+      {reflexiones.map(({ id, title, summary, content }, index) => (
+        <div class="group flex h-full flex-col gap-5">
+          <span class="reflection-top-line" aria-hidden="true" />
+          <button
+            type="button"
+            class="min-h-[4.5rem] text-left text-2xl font-semibold uppercase tracking-[0.08em] text-text-light title-button"
+            data-modal={`reflection-${id}`}
+          >
+            <span class="title-highlight-hover">{index === 0 ? 'El desafío comunicacional contemporáneo' : title}</span>
+          </button>
+          <p class="flex-1 text-sm leading-relaxed text-text-dim">{summary}</p>
+          <button type="button" class="btn mt-auto self-start" data-modal={`reflection-${id}`}>
+            Leer completa
+          </button>
           <dialog id={`reflection-${id}`} class="app-modal reflection-modal">
             <form method="dialog" class="flex justify-end">
               <button class="btn">Cerrar</button>
@@ -451,6 +475,120 @@ const press = [
         dialog.close();
       });
     });
+
+    const projectDataElement = document.getElementById('projects-data');
+    if (projectDataElement) {
+      try {
+        const projectData = JSON.parse(projectDataElement.textContent ?? '[]');
+        const projectSlider = document.querySelector('.project-slider');
+        const projectTitleEl = document.getElementById('project-copy-title');
+        const projectSummaryEl = document.getElementById('project-copy-summary');
+        const projectActionsEl = document.querySelector('.project-actions');
+        const projectCopyEl = document.querySelector('[data-project-copy]');
+        const projectSteps = document.querySelectorAll('.project-trigger');
+        const projectSticky = document.querySelector('.project-sticky');
+        let activeProjectIndex = 0;
+        let copyTimeout;
+
+        const setProject = (index) => {
+          const entry = projectData[index];
+          if (!entry || !projectTitleEl || !projectSummaryEl || !projectSlider || !projectSticky) {
+            return;
+          }
+
+          activeProjectIndex = index;
+          projectSlider.style.transform = `translateX(-${index * 100}%)`;
+          const slides = projectSlider.querySelectorAll('.project-slide');
+          slides.forEach((slide, slideIndex) => {
+            if (slideIndex === index && entry.alt) {
+              slide.setAttribute('aria-label', entry.alt);
+            }
+          });
+          const titleSpan = projectTitleEl?.querySelector('.title-highlight-hover');
+          if (titleSpan) {
+            titleSpan.textContent = entry.title ?? '';
+          }
+          projectSummaryEl.textContent = entry.summary ?? '';
+          projectSticky.setAttribute('data-active-project', entry.id ?? '');
+          if (projectActionsEl) {
+            const actionLink = projectActionsEl.querySelector('a');
+            if (entry.link && actionLink) {
+              projectActionsEl.classList.remove('hidden');
+              actionLink.setAttribute('href', entry.link);
+            } else {
+              projectActionsEl.classList.add('hidden');
+            }
+          }
+          if (projectCopyEl) {
+            if (entry.id === 'vocerias-y-despliegue') {
+              projectCopyEl.classList.add('project-copy-right');
+            } else {
+              projectCopyEl.classList.remove('project-copy-right');
+            }
+            projectCopyEl.classList.remove('project-copy-transition');
+            void projectCopyEl.offsetWidth;
+            projectCopyEl.classList.add('project-copy-transition');
+            window.clearTimeout(copyTimeout);
+            copyTimeout = window.setTimeout(() => {
+              projectCopyEl.classList.remove('project-copy-transition');
+            }, 800);
+          }
+        };
+
+        setProject(0);
+
+        const projectObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const index = Number(entry.target.getAttribute('data-index'));
+                if (!Number.isNaN(index) && index !== activeProjectIndex) {
+                  setProject(index);
+                }
+              }
+            });
+          },
+          { threshold: 0.35, rootMargin: '-5% 0% -45% 0%' }
+        );
+
+        projectSteps.forEach((step) => projectObserver.observe(step));
+      } catch (error) {
+        console.error('Error parsing project data', error);
+      }
+    }
+
+    const quoteElement = document.querySelector('[data-systems-quote]');
+    const typewriterElement = document.querySelector('[data-systems-typewriter]');
+    const quoteText = '“Ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede igualarlo, debe aprender a domesticarlo.”';
+
+    if (quoteElement && typewriterElement) {
+      let index = 0;
+      const speed = 30;
+
+      const type = () => {
+        if (index <= quoteText.length) {
+          typewriterElement.textContent = quoteText.slice(0, index);
+          index += 1;
+          window.setTimeout(type, speed);
+        }
+      };
+
+      type();
+    }
+
+    const trajectoryToggle = document.getElementById('trajectory-toggle');
+    const trajectoryExtras = document.querySelectorAll('[data-trajectory-extra="true"]');
+    let trajectoryExpanded = false;
+
+    if (trajectoryToggle && trajectoryExtras.length > 0) {
+      trajectoryToggle.addEventListener('click', () => {
+        trajectoryExpanded = !trajectoryExpanded;
+        trajectoryExtras.forEach((card) => {
+          card.classList.toggle('hidden', !trajectoryExpanded);
+        });
+        trajectoryToggle.textContent = trajectoryExpanded ? 'Ver menos' : 'Ver más';
+      });
+    }
 
     const pressToggle = document.getElementById('press-toggle');
     const pressCards = document.querySelectorAll('.press-card');

@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/DefaultLayout.astro
-title: "Autoridades y redes sociales: una confusión frecuente"
+title: "Autoridades y RRSS: una confusión frecuente"
 tag: "Sistema"
 order: 1
 ---
