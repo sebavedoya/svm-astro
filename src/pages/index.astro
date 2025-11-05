@@ -388,30 +388,31 @@ const press = [
 
   <section id="prensa" class="max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Prensa</h2>
-    <div class="grid gap-8 lg:grid-cols-3">
-      {press.map(({ title, outlet, link, image, alt, summary }, index) => (
-        <article class={`press-card flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/10 bg-bg-card shadow-[0_28px_56px_rgba(0,0,0,0.18)] transition hover:-translate-y-2 hover:shadow-[0_34px_64px_rgba(0,0,0,0.24)] ${index > 2 ? 'hidden' : ''}`}>
-          <div class="relative">
-            <img src={image} alt={alt} class="h-48 w-full object-cover" loading="lazy" />
-            <span class="absolute bottom-4 right-4 rounded-full bg-black/80 px-4 py-1 text-xs uppercase tracking-[0.4em] text-accent-alt">{outlet}</span>
+    <div class="grid gap-16 md:grid-cols-3">
+      {press.map(({ title, outlet, link, summary, image, alt }, index) => (
+        <div class={`press-entry group flex h-full flex-col gap-5 ${index >= 3 ? 'press-extra hidden' : ''}`} data-press-extra={index >= 3 ? 'true' : undefined}>
+          <div class="press-media" aria-hidden="true">
+            <img src={image} alt={alt} loading="lazy" />
           </div>
-          <div class="flex flex-1 flex-col gap-4 p-8">
-            <h3 class="text-xl font-semibold text-text-light">
-              <span class="title-highlight-hover">{title}</span>
-            </h3>
-            <p class="text-sm text-text-dim">{summary}</p>
-            <div class="mt-auto flex justify-end">
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener"
-                class="btn"
-              >
-                Nota completa
-              </a>
-            </div>
-          </div>
-        </article>
+          <p class="press-outlet">{outlet}</p>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener"
+            class="title-button text-left text-2xl font-semibold uppercase tracking-[0.08em] text-text-light"
+          >
+            <span class="title-highlight-hover">{title}</span>
+          </a>
+          <p class="flex-1 text-sm leading-relaxed text-text-dim">{summary}</p>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener"
+            class="btn mt-auto self-start"
+          >
+            Nota completa
+          </a>
+        </div>
       ))}
     </div>
     <div class="mt-8 flex justify-center">
@@ -591,18 +592,19 @@ const press = [
     }
 
     const pressToggle = document.getElementById('press-toggle');
-    const pressCards = document.querySelectorAll('.press-card');
-    let pressExpanded = false;
+    const pressCards = Array.from(document.querySelectorAll('[data-press-extra]'));
+    let pressVisibleCount = 3;
 
     if (pressToggle) {
       pressToggle.addEventListener('click', () => {
-        pressExpanded = !pressExpanded;
+        pressVisibleCount += 3;
         pressCards.forEach((card, index) => {
-          if (index > 2) {
-            card.classList.toggle('hidden', !pressExpanded);
-          }
+          card.classList.toggle('hidden', index >= pressVisibleCount);
         });
-        pressToggle.textContent = pressExpanded ? 'Ver menos' : 'Ver más';
+        if (pressVisibleCount >= pressCards.length) {
+          pressToggle.disabled = true;
+          pressToggle.textContent = 'No hay más notas';
+        }
       });
     }
 

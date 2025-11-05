@@ -185,6 +185,38 @@
   background: var(--highlight-color);
 }
 
+.press-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.press-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: rgba(5, 5, 5, 0.08);
+}
+
+.press-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.press-entry:hover .press-media img {
+  transform: scale(1.02);
+}
+
+.press-outlet {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(5, 5, 5, 0.45);
+}
+
 .project-copy-right .project-actions {
   align-self: flex-end;
 }
