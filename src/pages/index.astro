@@ -115,8 +115,10 @@ const projects = [
   },
 ];
 
-const projectsPayload = JSON.stringify(projects).replace(/</g, '\\u003c');
-const defaultProject = projects[0];
+const projectById = (id) => projects.find((project) => project.id === id);
+const projectInvestigacion = projectById('operacion-topografo');
+const projectVocerias = projectById('vocerias-y-despliegue');
+const projectDigital = projectById('comunicacion-digital');
 
 const formatReflectionParagraph = (value: string) =>
   value
@@ -269,10 +271,29 @@ const press = [
     </div>
   </section>
 
+  {projectVocerias && (
+    <section class="project-feature py-16">
+      <figure class="project-feature-media group">
+        <img
+          src={projectVocerias.image}
+          alt={projectVocerias.alt ?? projectVocerias.title}
+          loading="lazy"
+          class="project-feature-image"
+        />
+        <figcaption class="project-feature-overlay project-feature-overlay--right">
+          <div class="project-feature-content">
+            <h3 class="project-feature-title">{projectVocerias.title}</h3>
+            <p class="project-feature-summary">{projectVocerias.summary}</p>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+  )}
+
   <section id="experiencia" class="max-w-6xl mx-auto px-6 py-16">
     <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
       <div class="space-y-3">
-        <p class="text-xs uppercase tracking-[0.35em] text-text-dim">Trayectoria</p>
+        <p class="text-xs tracking-[0.35em] text-text-dim">Trayectoria</p>
         <h2 class="text-3xl font-heading tracking-[-0.02em] text-text-light">Roles clave al servicio de la comunicación pública</h2>
       </div>
     </div>
@@ -292,18 +313,7 @@ const press = [
               <p class="text-sm text-text-dim">{organization}</p>
             </div>
           </div>
-          {link && (
-            <div class="flex justify-end">
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener"
-                class="btn gap-2"
-              >
-                Ver organización <span>→</span>
-              </a>
-            </div>
-          )}
+          
         </div>
       ))}
     </div>
@@ -314,50 +324,34 @@ const press = [
     )}
   </section>
 
-  <section id="proyectos" class="project-section relative">
-    <div class="project-shell" style={`--project-count: ${projects.length}`}>
-      <div class="project-sticky" data-active-project={defaultProject?.id}>
-        <div class="project-slider" aria-hidden="true">
-          {projects.map(({ image, alt }) => (
-            <div class="project-slide" style={`background-image:url(${image})`} role="img" aria-label={alt ?? ''}></div>
-          ))}
-        </div>
-        <div class="project-gradient" aria-hidden="true"></div>
-        <div class="project-copy" data-project-copy>
-          <h3 id="project-copy-title" class="project-title">
-            <span class="title-highlight-hover">{defaultProject?.title}</span>
-          </h3>
-          <p id="project-copy-summary" class="project-summary">{defaultProject?.summary}</p>
-          {defaultProject?.link && (
-            <div class="project-actions">
-              <a href={defaultProject.link} target="_blank" rel="noopener" class="btn">
-                Ver reportaje
-              </a>
-            </div>
-          )}
-        </div>
-      </div>
-      <div class="project-scroll">
-        <div class="project-scroll-inner">
-          {projects.map(({ title }, index) => (
-            <article class="project-trigger" data-index={index} aria-label={title}></article>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <script type="application/json" id="projects-data" set:html={projectsPayload} />
-  </section>
+  {projectDigital && (
+    <section class="project-feature py-16">
+      <figure class="project-feature-media group">
+        <img
+          src={projectDigital.image}
+          alt={projectDigital.alt ?? projectDigital.title}
+          loading="lazy"
+          class="project-feature-image"
+        />
+        <figcaption class="project-feature-overlay">
+          <div class="project-feature-content">
+            <h3 class="project-feature-title">{projectDigital.title}</h3>
+            <p class="project-feature-summary">{projectDigital.summary}</p>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+  )}
 
   <section id="reflexiones" class="max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Opinión</h2>
     <div class="grid gap-16 md:grid-cols-3">
-      {reflexiones.map(({ id, title, summary, content }, index) => (
+          {reflexiones.map(({ id, title, summary, content }, index) => (
         <div class="group flex h-full flex-col gap-5">
           <span class="reflection-top-line" aria-hidden="true" />
           <button
             type="button"
-            class="min-h-[4.5rem] text-left text-2xl font-semibold uppercase tracking-[0.08em] text-text-light title-button"
+            class="min-h-[4.5rem] text-left text-2xl font-semibold tracking-[0.08em] text-text-light title-button"
             data-modal={`reflection-${id}`}
           >
             <span class="title-highlight-hover">{index === 0 ? 'El desafío comunicacional contemporáneo' : title}</span>
@@ -374,7 +368,7 @@ const press = [
               <span class="reflection-modal-ornament" aria-hidden="true" />
               <div class="space-y-4">
                 <h3 class="text-2xl font-semibold text-text-light">{title}</h3>
-                <p class="text-xs uppercase tracking-[0.3em] text-text-dim">Por S. Vedoya</p>
+                <p class="text-xs tracking-[0.3em] text-text-dim">Por S. Vedoya</p>
                 {content.map((paragraph) => (
                   <p class="text-sm leading-relaxed text-text-dim">{paragraph}</p>
                 ))}
@@ -386,11 +380,42 @@ const press = [
     </div>
   </section>
 
+  {projectInvestigacion && (
+    <section class="project-feature py-16">
+      <figure class="project-feature-media group">
+        <img
+          src={projectInvestigacion.image}
+          alt={projectInvestigacion.alt ?? projectInvestigacion.title}
+          loading="lazy"
+          class="project-feature-image"
+        />
+        <figcaption class="project-feature-overlay">
+          <div class="project-feature-content">
+            <h3 class="project-feature-title">{projectInvestigacion.title}</h3>
+            <p class="project-feature-summary">{projectInvestigacion.summary}</p>
+            {projectInvestigacion.link && (
+              <div class="project-actions">
+                <a
+                  href={projectInvestigacion.link}
+                  target="_blank"
+                  rel="noopener"
+                  class="btn"
+                >
+                  Ver reportaje
+                </a>
+              </div>
+            )}
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+  )}
+
   <section id="prensa" class="max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-heading mb-6">Prensa</h2>
     <div class="grid gap-16 md:grid-cols-3">
       {press.map(({ title, outlet, link, summary, image, alt }, index) => (
-        <div class={`press-entry group flex h-full flex-col gap-5 ${index >= 3 ? 'press-extra hidden' : ''}`} data-press-extra={index >= 3 ? 'true' : undefined}>
+        <div class={`press-entry group flex h-full flex-col gap-5 ${index >= 3 ? 'press-extra is-hidden' : ''}`} data-press-extra={index >= 3 ? 'true' : undefined}>
           <div class="press-media" aria-hidden="true">
             <img src={image} alt={alt} loading="lazy" />
           </div>
@@ -399,19 +424,12 @@ const press = [
             href={link}
             target="_blank"
             rel="noopener"
-            class="title-button text-left text-2xl font-semibold uppercase tracking-[0.08em] text-text-light"
+            class="title-button text-left text-2xl font-semibold tracking-[0.08em] text-text-light"
           >
             <span class="title-highlight-hover">{title}</span>
           </a>
           <p class="flex-1 text-sm leading-relaxed text-text-dim">{summary}</p>
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener"
-            class="btn mt-auto self-start"
-          >
-            Nota completa
-          </a>
+          <span class="press-divider" aria-hidden="true" />
         </div>
       ))}
     </div>
@@ -420,25 +438,15 @@ const press = [
     </div>
   </section>
 
-  <section id="contacto" class="max-w-3xl mx-auto px-6 py-16">
-    <div class="rounded-2xl border border-black/5 bg-bg-card px-8 py-12 text-center shadow-[0_20px_40px_rgba(20,20,20,0.08)]">
-      <h2 class="text-3xl font-heading mb-4">¿Conversamos?</h2>
-      <p class="text-text-dim">Escríbeme y revisa mi CV.</p>
-      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="mailto:seba.vedoya@gmail.com" class="btn normal-case tracking-[0.1em]">
-          seba.vedoya@gmail.com
-        </a>
-        <a href="/files/CV.pdf" class="btn">
-          Descargar CV
-        </a>
-        <a
-          href="https://www.linkedin.com/in/sebastianvedoyam/"
-          target="_blank"
-          rel="noopener"
-          class="btn"
-        >
-          LinkedIn
-        </a>
+  <section id="contacto" class="contact-section px-6 py-20">
+    <div class="contact-shell">
+      <div class="flex flex-col items-center gap-8">
+        <h2 class="contact-title font-heading text-center">¡Conversemos!</h2>
+        <div class="flex flex-col gap-4 w-full max-w-xs">
+          <a href="mailto:seba.vedoya@gmail.com" class="btn w-full text-center">Contáctame</a>
+          <a href="/files/CV.pdf" class="btn w-full text-center">Descargar CV</a>
+          <a href="https://www.linkedin.com/in/sebastianvedoyam/" target="_blank" rel="noopener" class="btn w-full text-center">LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>
@@ -477,87 +485,6 @@ const press = [
       });
     });
 
-    const projectDataElement = document.getElementById('projects-data');
-    if (projectDataElement) {
-      try {
-        const projectData = JSON.parse(projectDataElement.textContent ?? '[]');
-        const projectSlider = document.querySelector('.project-slider');
-        const projectTitleEl = document.getElementById('project-copy-title');
-        const projectSummaryEl = document.getElementById('project-copy-summary');
-        const projectActionsEl = document.querySelector('.project-actions');
-        const projectCopyEl = document.querySelector('[data-project-copy]');
-        const projectSteps = document.querySelectorAll('.project-trigger');
-        const projectSticky = document.querySelector('.project-sticky');
-        let activeProjectIndex = 0;
-        let copyTimeout;
-
-        const setProject = (index) => {
-          const entry = projectData[index];
-          if (!entry || !projectTitleEl || !projectSummaryEl || !projectSlider || !projectSticky) {
-            return;
-          }
-
-          activeProjectIndex = index;
-          projectSlider.style.transform = `translateX(-${index * 100}%)`;
-          const slides = projectSlider.querySelectorAll('.project-slide');
-          slides.forEach((slide, slideIndex) => {
-            if (slideIndex === index && entry.alt) {
-              slide.setAttribute('aria-label', entry.alt);
-            }
-          });
-          const titleSpan = projectTitleEl?.querySelector('.title-highlight-hover');
-          if (titleSpan) {
-            titleSpan.textContent = entry.title ?? '';
-          }
-          projectSummaryEl.textContent = entry.summary ?? '';
-          projectSticky.setAttribute('data-active-project', entry.id ?? '');
-          if (projectActionsEl) {
-            const actionLink = projectActionsEl.querySelector('a');
-            if (entry.link && actionLink) {
-              projectActionsEl.classList.remove('hidden');
-              actionLink.setAttribute('href', entry.link);
-            } else {
-              projectActionsEl.classList.add('hidden');
-            }
-          }
-          if (projectCopyEl) {
-            if (entry.id === 'vocerias-y-despliegue') {
-              projectCopyEl.classList.add('project-copy-right');
-            } else {
-              projectCopyEl.classList.remove('project-copy-right');
-            }
-            projectCopyEl.classList.remove('project-copy-transition');
-            void projectCopyEl.offsetWidth;
-            projectCopyEl.classList.add('project-copy-transition');
-            window.clearTimeout(copyTimeout);
-            copyTimeout = window.setTimeout(() => {
-              projectCopyEl.classList.remove('project-copy-transition');
-            }, 800);
-          }
-        };
-
-        setProject(0);
-
-        const projectObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const index = Number(entry.target.getAttribute('data-index'));
-                if (!Number.isNaN(index) && index !== activeProjectIndex) {
-                  setProject(index);
-                }
-              }
-            });
-          },
-          { threshold: 0.35, rootMargin: '-5% 0% -45% 0%' }
-        );
-
-        projectSteps.forEach((step) => projectObserver.observe(step));
-      } catch (error) {
-        console.error('Error parsing project data', error);
-      }
-    }
-
     const quoteElement = document.querySelector('[data-systems-quote]');
     const typewriterElement = document.querySelector('[data-systems-typewriter]');
     const quoteText = '“Ningún actor puede controlar el entorno sin igualarlo en complejidad; y si no puede igualarlo, debe aprender a domesticarlo.”';
@@ -593,15 +520,21 @@ const press = [
 
     const pressToggle = document.getElementById('press-toggle');
     const pressCards = Array.from(document.querySelectorAll('[data-press-extra]'));
-    let pressVisibleCount = 3;
+    let pressRevealed = 0;
+
+    const updatePressVisibility = () => {
+      pressCards.forEach((card, index) => {
+        card.classList.toggle('is-hidden', index >= pressRevealed);
+      });
+    };
+
+    updatePressVisibility();
 
     if (pressToggle) {
       pressToggle.addEventListener('click', () => {
-        pressVisibleCount += 3;
-        pressCards.forEach((card, index) => {
-          card.classList.toggle('hidden', index >= pressVisibleCount);
-        });
-        if (pressVisibleCount >= pressCards.length) {
+        pressRevealed = Math.min(pressCards.length, pressRevealed + 3);
+        updatePressVisibility();
+        if (pressRevealed >= pressCards.length) {
           pressToggle.disabled = true;
           pressToggle.textContent = 'No hay más notas';
         }

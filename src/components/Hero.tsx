@@ -25,7 +25,7 @@ export default function Hero() {
         >
           <span className="block text-text-light">Sebastián Vedoya M.</span>
           <span className="block text-text-light">
-            <span className="title-highlight">Comunicación estratégica.</span>
+            <span className="title-highlight">Comunicación estratégica</span>
           </span>
         </motion.div>
         <motion.p
